@@ -22,7 +22,8 @@ const initials = alt.replace(/[^A-Za-zÁÉÍÓÚÑáéíóúñ ]/g, '').split(' 
   </div>
 )}
 <style>
-  .pimg, .pimg :global(img) { width: 100%; height: 100%; }
+  .pimg { display: block; width: 100%; height: 100%; }
+  .pimg :global(img) { display: block; width: 100%; height: 100%; }
   .pimg :global(img) { object-fit: contain; }
   .pimg--cover :global(img) { object-fit: cover; }
   .pimg--ph {

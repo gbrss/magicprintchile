@@ -11,7 +11,7 @@ const [coin, shield, mug, chest] = byIds([143, 149, 131, 189]);
 const featured = byIds([143, 199, 171, 185, 97, 125, 104, 132]);
 const branches = [
   { slug: 'infanteria-de-marina', id: 152 },
-  { slug: 'litoral', id: 199 },
+  { slug: 'litoral', id: 195 },
   { slug: 'ejercito', id: 188 },
   { slug: 'fuerza-aerea', id: 160 },
   { slug: 'carabineros', id: 174 },
@@ -240,7 +240,10 @@ const webLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Mag
   .branch-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
   .branch { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: rgb(246 242 233 / 0.04); border: 1px solid rgb(246 242 233 / 0.12); text-decoration: none; transition: background 0.3s, transform 0.4s var(--ease); }
   .branch:hover { background: rgb(246 242 233 / 0.09); transform: translateY(-4px); }
-  .branch__img { aspect-ratio: 4/5; background: var(--paper); padding: 0.8rem; }
+  .branch__img { position: relative; aspect-ratio: 1; background: #fff; overflow: hidden; }
+  .branch__img :global(.pimg) { position: absolute; inset: 0; padding: 8%; }
+  .branch__img :global(img) { object-fit: contain; transition: transform 0.7s var(--ease); }
+  .branch:hover .branch__img :global(img) { transform: scale(1.05); }
   .branch__meta { padding: 1rem 1.1rem 1.2rem; }
   .branch__meta .mono { font-size: 0.72rem; color: var(--brass-2); }
   .branch__meta h3 { margin: 0.3rem 0 0.2rem; font-size: 1.35rem; }
