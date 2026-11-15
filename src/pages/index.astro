@@ -1,0 +1,309 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ProductImage from '../components/ProductImage.astro';
+import Icon from '../components/Icon.astro';
+import { byIds, img, catBySlug, products, INSTITUTIONAL, CORPORATE, bannerBySource } from '../lib/catalog';
+import { services } from '../lib/services';
+import { waLink } from '../lib/site';
+
+const [coin, shield, mug, chest] = byIds([141, 149, 131, 189]);
+const featured = byIds([143, 199, 171, 185, 97, 125, 104, 132]);
+const branches = [
+  { slug: 'infanteria-de-marina', id: 152 },
+  { slug: 'litoral', id: 199 },
+  { slug: 'ejercito', id: 188 },
+  { slug: 'fuerza-aerea', id: 160 },
+  { slug: 'carabineros', id: 174 },
+].map((b) => ({ ...b, cat: catBySlug(b.slug)!, product: byIds([b.id])[0] }));
+const corporate = ['tazones', 'poleras', 'gorros', 'chapitas', 'llaveros', 'promocionales'].map((s) => {
+  const c = catBySlug(s)!;
+  const p = products.find((x) => x.categories.includes(s))!;
+  return { c, p };
+});
+const marquee = ['Galvanos', 'Monedas', 'Escudos de bronce', 'Bustos', 'Cofres de raulí', 'Tazones', 'Poleras', 'Gorros bordados', 'Chapitas', 'Llaveros', 'Grabado láser', 'Sublimación', 'Plotter de corte'];
+const faqs = [
+  ['¿Por qué no hay precios publicados?', 'Cada pieza se fabrica con tu logo, texto, medidas y cantidad, así que cotizamos a medida. Agrega productos a tu cotización y te respondemos con precio y plazo.'],
+  ['¿Puedo enviar mi logo o diseño?', 'Sí. Al enviar la cotización por WhatsApp o correo puedes adjuntar tu logo, escudo o imagen de referencia.'],
+  ['¿Cuánto demoran?', 'Depende de la técnica y la cantidad. Algunos galvanos con placa metálica se entregan en 24 a 48 horas; piezas fundidas en bronce o cofres son a pedido.'],
+  ['¿Venden insumos para sublimar y chapitas?', 'Sí: tazones con Polycoat, poleras, choperos, placas de sublimación y chapas americanas de 32 a 75 mm, además de máquinas de chapitas.'],
+  ['¿Trabajan con instituciones de Defensa?', 'Es nuestra especialidad: Infantería de Marina, Litoral, Ejército, Fuerza Aérea y Carabineros, con escudos, galvanos, monedas y regalos protocolares.'],
+];
+const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+const webLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'MagicPrintChile', url: 'https://magicprintchile.cl', potentialAction: { '@type': 'SearchAction', target: 'https://magicprintchile.cl/catalogo/?q={q}', 'query-input': 'required name=q' } };
+---
+<Base jsonld={[webLd, faqLd]}>
+  <!-- HERO -->
+  <section class="hero engrave">
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <p class="eyebrow">Galvanos · Monedas · Bronce · Personalizados</p>
+        <h1>Grabamos lo que tu institución <em>honra.</em></h1>
+        <p class="lead">Galvanos, escudos de bronce, monedas conmemorativas y regalos corporativos con tu sello. Del cambio de mando al aniversario de tu empresa, lo hacemos tangible.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--red" href="/catalogo/">Explorar catálogo <Icon name="arrow" /></a>
+          <a class="btn btn--ghost" href={waLink('Hola MagicPrintChile, quiero cotizar.')} target="_blank" rel="noopener"><Icon name="wa" />Cotizar por WhatsApp</a>
+        </div>
+        <dl class="hero__stats">
+          <div><dt>{products.length}</dt><dd>productos en catálogo</dd></div>
+          <div><dt>5</dt><dd>ramas de Defensa y Seguridad</dd></div>
+          <div><dt>24–48h</dt><dd>galvanos con placa metálica</dd></div>
+        </dl>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="medal">
+          <div class="medal__ring"></div>
+          <div class="medal__ring medal__ring--2"></div>
+          <div class="medal__face"><ProductImage src={img(coin.images[0])} alt={coin.name} loading="eager" widths={[360, 560]} sizes="(min-width: 900px) 360px, 60vw" fit="cover" /></div>
+        </div>
+        <a class="float float--a" href={`/producto/${shield.slug}/`} tabindex="-1"><ProductImage src={img(shield.images[0])} alt={shield.name} widths={[200, 320]} sizes="180px" /><span>{shield.code}</span></a>
+        <a class="float float--b" href={`/producto/${mug.slug}/`} tabindex="-1"><ProductImage src={img(mug.images[0])} alt={mug.name} widths={[200, 320]} sizes="160px" /><span>Tazón mágico</span></a>
+        <a class="float float--c" href={`/producto/${chest.slug}/`} tabindex="-1"><ProductImage src={img(chest.images[0])} alt={chest.name} widths={[200, 320]} sizes="160px" /><span>{chest.code}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      {[...marquee, ...marquee].map((m) => <span>{m}<i>✦</i></span>)}
+    </div>
+  </div>
+
+  <!-- DOS LÍNEAS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">Un taller, dos líneas</p><h2>Honores para instituciones. Marca para empresas.</h2></div>
+        <p>Fabricamos piezas protocolares de alto valor simbólico y, a la vez, merchandising que tu equipo y tus clientes sí usan.</p>
+      </div>
+      <div class="lines">
+        <a href="/linea-institucional/" class="line line--inst" data-reveal>
+          <div class="line__bg"></div>
+          <p class="eyebrow">Línea institucional</p>
+          <h3>Escudos, galvanos, bustos, monedas y cofres para Defensa y Seguridad.</h3>
+          <ul>{INSTITUTIONAL.map((s) => <li>{catBySlug(s)?.name}</li>)}</ul>
+          <span class="line__go">Ver línea institucional <Icon name="arrow" /></span>
+        </a>
+        <a href="/empresas/" class="line line--corp" data-reveal>
+          <p class="eyebrow">Línea corporativa</p>
+          <h3>Tazones, textiles bordados, chapitas y regalos con tu logo.</h3>
+          <ul>{CORPORATE.slice(0, 8).map((s) => <li>{catBySlug(s)?.short ?? catBySlug(s)?.name}</li>)}</ul>
+          <span class="line__go">Ver soluciones para empresas <Icon name="arrow" /></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAMAS -->
+  <section class="section dark engrave branches">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">Defensa y Seguridad</p><h2>Cada rama, con su <em>propio</em> escudo.</h2></div>
+        <p>Catálogo especializado por institución, con códigos de producto para cotizar rápido y sin errores.</p>
+      </div>
+      <div class="branch-grid">
+        {branches.map((b, i) => (
+          <a class="branch" href={`/categoria/${b.slug}/`} data-reveal style={`transition-delay:${i * 70}ms`}>
+            <div class="branch__img"><ProductImage src={img(b.product.images[0])} alt={b.product.name} widths={[300, 480]} sizes="(min-width: 900px) 240px, 45vw" /></div>
+            <div class="branch__meta"><span class="mono">0{i + 1}</span><h3>{b.cat.name}</h3><small>{b.cat.count} productos</small></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">Destacados</p><h2>Piezas que se entregan con orgullo.</h2></div>
+        <a class="btn btn--ghost" href="/catalogo/">Ver todo el catálogo <Icon name="arrow" /></a>
+      </div>
+      <div class="grid-products">{featured.map((p) => <ProductCard product={p} />)}</div>
+    </div>
+  </section>
+
+  <!-- CORPORATIVO -->
+  <section class="section section--paper2">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">Corporativo y promocional</p><h2>Tu marca, en las manos correctas.</h2></div>
+        <p>Regalos de fin de año, uniformes para eventos, kits de bienvenida y promocionales con tu logo.</p>
+      </div>
+      <div class="corp-grid">
+        {corporate.map(({ c, p }, i) => (
+          <a class:list={['corp', { 'corp--big': i === 0 }]} href={`/categoria/${c.slug}/`} data-reveal>
+            <ProductImage src={img(p.images[0])} alt={c.name} widths={[320, 560]} sizes="(min-width: 900px) 30vw, 50vw" />
+            <div class="corp__label"><h3>{c.short ?? c.name}</h3><span>{c.count} {c.count === 1 ? 'producto' : 'productos'} <Icon name="arrow" size={16} /></span></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉCNICAS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">El taller</p><h2>Ocho técnicas bajo un mismo techo.</h2></div>
+        <a class="btn btn--ghost" href="/servicios/">Conocer servicios <Icon name="arrow" /></a>
+      </div>
+      <ol class="tech">
+        {services.map((s, i) => (
+          <li data-reveal>
+            <a href={`/servicios/#${s.slug}`}>
+              <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section dark process">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><p class="eyebrow">Cómo cotizar</p><h2>De la idea a la pieza en cuatro pasos.</h2></div>
+      </div>
+      <ol class="steps">
+        <li data-reveal><span>I</span><h3>Elige</h3><p>Agrega productos a tu cotización desde el catálogo, o descríbenos lo que imaginas.</p></li>
+        <li data-reveal><span>II</span><h3>Envía</h3><p>Mándanos la cotización por WhatsApp o correo con tu logo, textos y cantidades.</p></li>
+        <li data-reveal><span>III</span><h3>Aprueba</h3><p>Te respondemos con precio, plazo y propuesta para validar antes de producir.</p></li>
+        <li data-reveal><span>IV</span><h3>Recibe</h3><p>Producimos en nuestro taller y coordinamos la entrega de tu pedido.</p></li>
+      </ol>
+      <div class="process__cta"><button class="btn btn--brass" type="button" data-quote-open><Icon name="quote" />Abrir mi cotización</button></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap faq">
+      <div data-reveal><p class="eyebrow">Preguntas frecuentes</p><h2>Lo que más nos preguntan.</h2></div>
+      <div class="faq__list">
+        {faqs.map(([q, a]) => <details data-reveal><summary>{q}<Icon name="plus" /></summary><p>{a}</p></details>)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* HERO */
+  .hero { position: relative; overflow: hidden; }
+  .hero__in { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; min-height: min(84vh, 820px); padding-block: clamp(3rem, 6vw, 5rem); }
+  .hero h1 { margin: 1.2rem 0 1.4rem; max-width: 12ch; }
+  .hero h1 em { color: var(--red); }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+  .hero__stats { display: grid; grid-template-columns: repeat(3, auto); gap: 2rem; margin: 3rem 0 0; padding-top: 1.6rem; border-top: 1px solid var(--line); width: fit-content; }
+  .hero__stats dt { font-family: var(--f-display); font-size: 2rem; font-weight: 500; line-height: 1; }
+  .hero__stats dd { margin: 0.35rem 0 0; font-size: 0.82rem; color: var(--muted); max-width: 16ch; }
+  .hero__art { position: relative; aspect-ratio: 1; width: min(100%, 580px); justify-self: center; }
+  .medal { position: absolute; inset: 6%; display: grid; place-items: center; }
+  .medal__ring { position: absolute; inset: 0; background: url('/ornaments/rosette-brass.svg') center / contain no-repeat; animation: spin 120s linear infinite; }
+  .medal__ring--2 { inset: 13%; background-image: url('/ornaments/rosette-ink.svg'); animation-direction: reverse; animation-duration: 90s; opacity: 0.6; }
+  .medal__face { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--bronze); padding: 6px; box-shadow: 0 30px 60px -20px rgb(10 16 51 / 0.55), inset 0 0 0 1px rgb(255 255 255 / 0.4); }
+  .medal__face :global(.pimg), .medal__face :global(img) { border-radius: 50%; background: var(--white); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .float { position: absolute; display: flex; flex-direction: column; width: 30%; padding: 0.55rem 0.55rem 0.4rem; background: var(--white); border-radius: 14px; box-shadow: var(--shadow); text-decoration: none; animation: bob 7s ease-in-out infinite; }
+  .float :global(.pimg) { aspect-ratio: 1; }
+  .float span { font-family: var(--f-mono); font-size: 0.66rem; color: var(--muted); padding-top: 0.35rem; text-align: center; }
+  .float--a { left: -4%; top: 8%; rotate: -6deg; }
+  .float--b { right: -2%; top: 2%; width: 25%; rotate: 5deg; animation-delay: -2s; }
+  .float--c { right: 2%; bottom: 2%; width: 27%; rotate: -3deg; animation-delay: -4s; }
+  @keyframes bob { 50% { translate: 0 -10px; } }
+
+  /* MARQUEE */
+  .marquee { overflow: hidden; background: var(--red); color: #fff; padding: 0.95rem 0; border-block: 1px solid rgb(0 0 0 / 0.1); }
+  .marquee__track { display: flex; width: max-content; animation: marq 45s linear infinite; }
+  .marquee span { font-family: var(--f-display); font-size: 1.35rem; font-style: italic; padding-inline: 1.2rem; display: inline-flex; align-items: center; gap: 2.4rem; white-space: nowrap; }
+  .marquee i { font-style: normal; font-size: 0.8rem; opacity: 0.7; }
+  @keyframes marq { to { transform: translateX(-50%); } }
+
+  /* LINEAS */
+  .lines { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .line { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 1rem; padding: clamp(1.8rem, 3.5vw, 3rem); border-radius: 24px; min-height: 420px; text-decoration: none; transition: transform 0.5s var(--ease); }
+  .line:hover { transform: translateY(-4px); }
+  .line h3 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); max-width: 18ch; position: relative; }
+  .line ul { list-style: none; padding: 0; margin: 0 0 auto; display: flex; flex-wrap: wrap; gap: 0.4rem; position: relative; }
+  .line li { font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid currentColor; opacity: 0.8; }
+  .line__go { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 650; position: relative; }
+  .line--inst { background: var(--ink); color: var(--paper); }
+  .line--inst .eyebrow { color: var(--brass-2); }
+  .line__bg { position: absolute; right: -120px; bottom: -160px; width: 440px; aspect-ratio: 1; background: url('/ornaments/rosette-brass.svg') center / contain no-repeat; opacity: 0.45; transition: transform 1.2s var(--ease); }
+  .line--inst:hover .line__bg { transform: rotate(40deg) scale(1.05); }
+  .line--corp { background: var(--white); border: 1px solid var(--line); }
+  .line--corp .eyebrow { color: var(--red); }
+
+  /* RAMAS */
+  .branch-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .branch { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: rgb(246 242 233 / 0.04); border: 1px solid rgb(246 242 233 / 0.12); text-decoration: none; transition: background 0.3s, transform 0.4s var(--ease); }
+  .branch:hover { background: rgb(246 242 233 / 0.09); transform: translateY(-4px); }
+  .branch__img { aspect-ratio: 4/5; background: var(--paper); padding: 0.8rem; }
+  .branch__meta { padding: 1rem 1.1rem 1.2rem; }
+  .branch__meta .mono { font-size: 0.72rem; color: var(--brass-2); }
+  .branch__meta h3 { margin: 0.3rem 0 0.2rem; font-size: 1.35rem; }
+  .branch__meta small { color: rgb(246 242 233 / 0.55); }
+
+  /* CORPORATIVO */
+  .section--paper2 { background: var(--paper-2); }
+  .corp-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(220px, auto); gap: 1rem; }
+  .corp { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--white); text-decoration: none; display: flex; flex-direction: column; }
+  .corp :global(.pimg) { flex: 1; padding: 1rem; min-height: 160px; transition: transform 0.7s var(--ease); }
+  .corp:hover :global(.pimg) { transform: scale(1.06); }
+  .corp--big { grid-column: span 2; grid-row: span 2; }
+  .corp__label { display: flex; justify-content: space-between; align-items: end; gap: 1rem; padding: 0.9rem 1.1rem 1.1rem; border-top: 1px solid var(--line); }
+  .corp__label h3 { margin: 0; font-size: 1.4rem; }
+  .corp--big .corp__label h3 { font-size: 2.2rem; }
+  .corp__label span { font-size: 0.82rem; color: var(--muted); display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap; }
+
+  /* TECNICAS */
+  .tech { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .tech li { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .tech a { display: block; height: 100%; padding: 1.6rem 1.4rem 1.8rem; text-decoration: none; transition: background 0.3s; }
+  .tech a:hover { background: var(--white); }
+  .tech .mono { font-size: 0.75rem; color: var(--red); }
+  .tech h3 { margin: 1.6rem 0 0.6rem; }
+  .tech p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+  /* PROCESO */
+  .process { background: radial-gradient(80% 120% at 100% 0%, #1b2566 0%, var(--ink) 60%); }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; counter-reset: s; }
+  .steps li { padding: 1.6rem; border-radius: var(--radius); border: 1px solid rgb(246 242 233 / 0.14); background: rgb(246 242 233 / 0.03); }
+  .steps span { font-family: var(--f-display); font-size: 2.6rem; font-style: italic; background: var(--bronze); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .steps h3 { margin: 0.8rem 0 0.5rem; }
+  .steps p { margin: 0; color: rgb(246 242 233 / 0.7); font-size: 0.95rem; }
+  .process__cta { margin-top: 2.5rem; }
+
+  /* FAQ */
+  .faq { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; }
+  .faq h2 { margin-top: 0.5rem; }
+  .faq__list details { border-bottom: 1px solid var(--line); }
+  .faq__list summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.3rem 0; cursor: pointer; font-weight: 620; font-size: 1.08rem; }
+  .faq__list summary::-webkit-details-marker { display: none; }
+  .faq__list summary :global(svg) { transition: transform 0.3s; flex: none; }
+  .faq__list details[open] summary :global(svg) { transform: rotate(45deg); }
+  .faq__list p { color: var(--muted); padding-bottom: 1.3rem; margin: 0; max-width: 60ch; }
+
+  @media (max-width: 1080px) {
+    .branch-grid { grid-template-columns: repeat(3, 1fr); }
+    .tech { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .hero__in { grid-template-columns: 1fr; min-height: 0; }
+    .hero__art { width: min(88%, 440px); order: -1; }
+    .lines, .faq { grid-template-columns: 1fr; }
+    .corp-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero__stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; }
+    .hero__stats dt { font-size: 1.5rem; }
+    .branch-grid { grid-template-columns: repeat(2, 1fr); }
+    .branch:first-child { grid-column: span 2; }
+    .branch:first-child .branch__img { aspect-ratio: 16/10; }
+    .tech, .steps { grid-template-columns: 1fr; }
+    .corp--big { grid-column: span 2; grid-row: span 1; }
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+---
+<Base title="Página no encontrada" noindex>
+  <section class="section nf engrave">
+    <div class="wrap">
+      <p class="eyebrow">Error 404</p>
+      <h1>Esta pieza <em>no está</em> en el catálogo.</h1>
+      <p class="lead">Puede que el enlace sea del sitio anterior. Busca el producto o vuelve al inicio.</p>
+      <div class="nf__btns"><a class="btn btn--red" href="/catalogo/#buscar"><Icon name="search" />Buscar en el catálogo</a><a class="btn btn--ghost" href="/">Ir al inicio</a></div>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 60vh; display: grid; align-items: center; }
+  .nf h1 em { color: var(--red); }
+  .nf__btns { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 2rem; }
+</style>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cotizar/
+
+Sitemap: https://magicprintchile.cl/sitemap-index.xml

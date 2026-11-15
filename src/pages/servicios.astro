@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ProductImage from '../components/ProductImage.astro';
+import Icon from '../components/Icon.astro';
+import { services } from '../lib/services';
+import { bannerBySource, byIds, img, catBySlug } from '../lib/catalog';
+import { waLink } from '../lib/site';
+const list = services.map((s) => ({ ...s, image: s.banner ? bannerBySource(s.banner)?.image : img(byIds(['product' in s ? s.product : 0])[0]?.images[0]) }));
+---
+<Base title="Servicios: impresión en metales, grabado láser, fundición en bronce y sublimación" description="Servicios de MagicPrintChile: impresión full color en metales, grabado láser, fundición en bronce, sublimación, bordado, plotter de corte, chapitas y monedas conmemorativas.">
+  <PageHead eyebrow="Servicios y técnicas" title="Un taller, <em>ocho</em> técnicas." lead="Combinamos procesos para que cada pieza quede exactamente como la imaginaste: del bronce fundido al estampado textil." crumbs={[{ href: '/servicios/', label: 'Servicios' }]} />
+  <section class="section section--tight">
+    <div class="wrap svc">
+      {list.map((s, i) => (
+        <article id={s.slug} data-reveal>
+          <div class="svc__img"><ProductImage src={s.image} alt={s.title} widths={[480, 800, 1200]} sizes="(min-width: 900px) 50vw, 92vw" fit="cover" /></div>
+          <div class="svc__txt">
+            <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+            <h2>{s.title}</h2>
+            <p class="lead">{s.text}</p>
+            <div class="svc__btns">
+              <a class="btn btn--ghost" href={`/categoria/${s.cat}/`}>Ver {catBySlug(s.cat)?.short ?? catBySlug(s.cat)?.name} <Icon name="arrow" /></a>
+              <a class="btn btn--wa" href={waLink(`Hola MagicPrintChile, quiero cotizar un trabajo de ${s.title.toLowerCase()}.`)} target="_blank" rel="noopener"><Icon name="wa" />Cotizar</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+<style>
+  .svc { display: flex; flex-direction: column; gap: clamp(2.5rem, 6vw, 5rem); }
+  .svc article { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; scroll-margin-top: 110px; }
+  .svc article:nth-child(even) .svc__img { order: 2; }
+  .svc__img { aspect-ratio: 3/2; border-radius: 24px; overflow: hidden; background: var(--white); border: 1px solid var(--line); }
+  .svc .mono { color: var(--red); font-size: 0.8rem; }
+  .svc h2 { margin: 0.6rem 0 1rem; }
+  .svc__btns { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  @media (max-width: 800px) { .svc article { grid-template-columns: 1fr; } .svc article:nth-child(even) .svc__img { order: 0; } }
+</style>

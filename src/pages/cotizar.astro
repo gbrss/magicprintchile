@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { SITE } from '../lib/site';
+---
+<Base title="Mi cotización" description="Arma tu cotización de productos personalizados y envíala por WhatsApp o correo a MagicPrintChile." noindex>
+  <PageHead eyebrow="Sin costo ni compromiso" title="Mi <em>cotización</em>" lead="Revisa los productos, ajusta cantidades y envíanos todo en un solo mensaje." crumbs={[{ href: '/cotizar/', label: 'Cotización' }]} />
+  <section class="section section--tight">
+    <div class="wrap qwrap">
+      <div class="qcard"><QuoteForm /></div>
+      <aside>
+        <h2>¿Prefieres hablar?</h2>
+        <p>Escríbenos o llámanos al <a href={`tel:${SITE.phoneRaw}`}>{SITE.phone}</a> o al correo <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+        <p class="mono">Tip: incluye medidas, textos a grabar y la fecha de tu evento para cotizar más rápido.</p>
+      </aside>
+    </div>
+  </section>
+</Base>
+<style>
+  .qwrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+  .qcard { padding: clamp(1.2rem, 3vw, 2rem); background: var(--white); border: 1px solid var(--line); border-radius: 24px; }
+  aside h2 { font-size: 2rem; }
+  aside .mono { font-size: 0.82rem; color: var(--muted); padding: 1rem; border: 1px dashed var(--line-strong); border-radius: 12px; }
+  @media (max-width: 860px) { .qwrap { grid-template-columns: 1fr; } }
+</style>

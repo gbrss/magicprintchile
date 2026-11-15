@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ProductImage from '../../components/ProductImage.astro';
+import Icon from '../../components/Icon.astro';
+import { products, productBySlug, catBySlug, img, productBlurb } from '../../lib/catalog';
+import { SITE, waLink } from '../../lib/site';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug } }));
+}
+const p = productBySlug(Astro.params.slug!)!;
+const primary = catBySlug(p.primary)!;
+const sub = p.categories.map(catBySlug).find((c) => c?.parent);
+const images = p.images.map(img).filter(Boolean) as NonNullable<ReturnType<typeof img>>[];
+const blurb = productBlurb(p);
+const subRelated = sub ? products.filter((x) => x.id !== p.id && x.categories.includes(sub.slug)) : [];
+const related = [...subRelated, ...products.filter((x) => x.id !== p.id && x.primary === p.primary && !subRelated.includes(x))].slice(0, 4);
+const url = `${SITE.url}/producto/${p.slug}/`;
+const crumbs = [{ href: '/catalogo/', label: 'Catálogo' }, { href: `/categoria/${primary.slug}/`, label: primary.name }, ...(sub && sub.count < primary.count ? [{ href: `/categoria/${sub.slug}/`, label: sub.name }] : [])];
+const wa = waLink(`Hola MagicPrintChile, quiero cotizar: ${p.name}${p.code ? ` (código ${p.code})` : ''}.\n${url}`);
+const isInst = p.categories.includes('linea-institucional');
+const features = isInst
+  ? ['Personalizable con escudo, insignia, grado o dedicatoria', 'Ideal para cambios de mando, aniversarios y despedidas', 'Fabricación en taller propio', 'Cotización sin costo por WhatsApp o correo']
+  : ['Personalizable con tu logo, texto o diseño', 'Ideal para regalos corporativos, eventos y equipos', 'Cotización por volumen', 'Respuesta rápida por WhatsApp o correo'];
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    description: blurb,
+    sku: p.code ?? `MPC-${p.id}`,
+    category: [primary.name, sub?.name].filter(Boolean).join(' > '),
+    brand: { '@type': 'Brand', name: 'MagicPrintChile' },
+    url,
+    image: images.map((i) => new URL(i.src, SITE.url).toString()),
+  },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ label: 'Inicio', href: '/' }, ...crumbs, { label: p.name, href: `/producto/${p.slug}/` }].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: `${SITE.url}${c.href}` })) },
+];
+---
+<Base title={p.name} description={blurb.slice(0, 155)} jsonld={jsonld} image={images[0]?.src}>
+  <section class="pd">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Migas de pan">
+        <a href="/">Inicio</a>{crumbs.map((c) => <><span>/</span><a href={c.href}>{c.label}</a></>)}
+      </nav>
+      <div class="pd__grid">
+        <div class="gallery" data-gallery>
+          <div class="gallery__main">
+            {images.length ? images.map((im, i) => (
+              <div class="gallery__slide" data-slide={i} hidden={i > 0}>
+                <ProductImage src={im} alt={`${p.name}${i ? ` — imagen ${i + 1}` : ''}`} loading={i === 0 ? 'eager' : 'lazy'} widths={[480, 720, 1000, 1400]} sizes="(min-width: 960px) 600px, 92vw" />
+              </div>
+            )) : <ProductImage alt={p.name} />}
+          </div>
+          {images.length > 1 && (
+            <div class="gallery__thumbs">
+              {images.map((im, i) => (
+                <button type="button" data-thumb={i} aria-label={`Ver imagen ${i + 1}`} aria-pressed={i === 0 ? 'true' : 'false'}>
+                  <ProductImage src={im} alt="" widths={[120, 200]} sizes="90px" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        <div class="pd__info">
+          <a class="pd__cat" href={`/categoria/${(sub && sub.count < primary.count ? sub : primary).slug}/`}>{(sub ?? primary).name}</a>
+          <h1>{p.name}</h1>
+          <dl class="pd__meta">
+            <div><dt>Código</dt><dd class="mono">{p.code ?? `MPC-${p.id}`}</dd></div>
+            <div><dt>Precio</dt><dd>Según cantidad y personalización</dd></div>
+          </dl>
+          <p class="pd__desc">{blurb}</p>
+          <ul class="pd__feat">{features.map((f) => <li><Icon name="check" size={18} />{f}</li>)}</ul>
+          <div class="pd__buy">
+            <label class="qty">
+              <span>Cantidad</span>
+              <input id="qty" type="number" min="1" value="1" inputmode="numeric" />
+            </label>
+            <button class="btn btn--red" type="button" data-add={JSON.stringify({ id: p.id, slug: p.slug, name: p.name, code: p.code })} data-qty-from="#qty" data-open-after>
+              <Icon name="plus" />Agregar a mi cotización
+            </button>
+          </div>
+          <a class="btn btn--wa btn--block" href={wa} target="_blank" rel="noopener"><Icon name="wa" />Cotizar ahora por WhatsApp</a>
+          <p class="pd__note">¿Necesitas varios productos? Agrégalos a tu cotización y envíalos en un solo mensaje.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {related.length > 0 && (
+    <section class="section section--tight related">
+      <div class="wrap">
+        <div class="section-head"><div><p class="eyebrow">También te puede interesar</p><h2>Más de {(sub ?? primary).name}</h2></div><a class="btn btn--ghost" href={`/categoria/${primary.slug}/`}>Ver categoría <Icon name="arrow" /></a></div>
+        <div class="grid-products">{related.map((r) => <ProductCard product={r} />)}</div>
+      </div>
+    </section>
+  )}
+</Base>
+<style>
+  .pd { padding-block: 1.8rem clamp(3rem, 6vw, 5rem); }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); margin-bottom: 1.6rem; }
+  .crumbs a { text-decoration: none; }
+  .crumbs a:hover { text-decoration: underline; }
+  .pd__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .gallery { position: sticky; top: 100px; }
+  .gallery__main { aspect-ratio: 1; background: radial-gradient(110% 90% at 50% 0%, #fff 45%, var(--paper-2) 100%); border: 1px solid var(--line); border-radius: 24px; padding: clamp(1rem, 3vw, 2.2rem); overflow: hidden; }
+  .gallery__slide { height: 100%; }
+  .gallery__thumbs { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+  .gallery__thumbs button { width: 84px; aspect-ratio: 1; padding: 0.35rem; border: 1px solid var(--line); border-radius: 12px; background: var(--white); cursor: pointer; }
+  .gallery__thumbs button[aria-pressed='true'] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+  .pd__cat { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); text-decoration: none; }
+  .pd__info h1 { font-size: clamp(2rem, 3.6vw, 3.2rem); margin: 0.7rem 0 1.2rem; }
+  .pd__meta { display: flex; gap: 2rem; margin: 0 0 1.4rem; padding: 1rem 0; border-block: 1px solid var(--line); }
+  .pd__meta dt { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .pd__meta dd { margin: 0.2rem 0 0; font-weight: 600; }
+  .pd__desc { font-size: 1.08rem; }
+  .pd__feat { list-style: none; padding: 0; margin: 1.4rem 0 1.8rem; display: grid; gap: 0.55rem; }
+  .pd__feat li { display: flex; gap: 0.6rem; align-items: start; font-size: 0.97rem; }
+  .pd__feat :global(svg) { color: #128c4a; flex: none; margin-top: 0.15rem; }
+  .pd__buy { display: flex; gap: 0.7rem; align-items: end; margin-bottom: 0.7rem; }
+  .pd__buy .btn { flex: 1; }
+  .qty { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+  .qty input { width: 96px; height: 50px; text-align: center; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--white); font-family: var(--f-mono); font-size: 1rem; }
+  .pd__note { font-size: 0.85rem; color: var(--muted); margin-top: 1rem; }
+  .related { background: var(--paper-2); }
+  @media (max-width: 900px) { .pd__grid { grid-template-columns: 1fr; } .gallery { position: static; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
+    const slides = [...g.querySelectorAll<HTMLElement>('[data-slide]')];
+    const thumbs = [...g.querySelectorAll<HTMLButtonElement>('[data-thumb]')];
+    thumbs.forEach((t) => t.addEventListener('click', () => {
+      const i = Number(t.dataset.thumb);
+      slides.forEach((s, j) => (s.hidden = i !== j));
+      thumbs.forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
+    }));
+  });
+</script>

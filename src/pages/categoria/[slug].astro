@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Icon from '../../components/Icon.astro';
+import { pageCategories, productsIn, catBySlug, visibleChildren, img } from '../../lib/catalog';
+import { waLink, SITE } from '../../lib/site';
+
+export function getStaticPaths() {
+  return pageCategories.map((c) => ({ params: { slug: c.slug } }));
+}
+const { slug } = Astro.params;
+const cat = catBySlug(slug!)!;
+const parent = cat.parent ? catBySlug(cat.parent) : null;
+const items = productsIn(cat.slug);
+const subs = visibleChildren(parent ? parent.slug : cat.slug);
+const isInst = cat.slug === 'linea-institucional' || parent?.slug === 'linea-institucional';
+const crumbs = [{ href: '/catalogo/', label: 'Catálogo' }, ...(parent ? [{ href: `/categoria/${parent.slug}/`, label: parent.name }] : []), { href: `/categoria/${cat.slug}/`, label: cat.name }];
+const url = `${SITE.url}/categoria/${cat.slug}/`;
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ name: 'Inicio', href: '/' }, ...crumbs].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: 'label' in c ? c.label : c.name, item: `${SITE.url}${c.href}` })) },
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: cat.name, url, description: cat.blurb, mainEntity: { '@type': 'ItemList', numberOfItems: items.length, itemListElement: items.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE.url}/producto/${p.slug}/`, name: p.name })) } },
+];
+const ogImg = img(items[0]?.images[0]);
+---
+<Base title={`${cat.name} personalizados`} description={`${cat.blurb} ${items.length} productos en catálogo. Cotiza por WhatsApp con MagicPrintChile.`} jsonld={jsonld} image={ogImg?.src}>
+  <PageHead eyebrow={`${items.length} ${items.length === 1 ? 'producto' : 'productos'}${parent ? ` · ${parent.name}` : ''}`} title={cat.name} lead={cat.blurb} crumbs={crumbs} dark={isInst}>
+    {subs.length > 0 && (
+      <div class="subs">
+        <a class="chip" href={`/categoria/${parent ? parent.slug : cat.slug}/`} aria-current={!parent ? 'true' : undefined}>Todo</a>
+        {subs.map((s) => <a class="chip" href={`/categoria/${s.slug}/`} aria-current={s.slug === cat.slug ? 'true' : undefined}>{s.name} <small>{s.count}</small></a>)}
+      </div>
+    )}
+  </PageHead>
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="grid-products">{items.map((p, i) => <ProductCard product={p} eager={i < 4} />)}</div>
+      <aside class="custom" data-reveal>
+        <div>
+          <p class="eyebrow">¿No está lo que buscas?</p>
+          <h2>Fabricamos a pedido{isInst ? ' para tu unidad' : ' con tu marca'}.</h2>
+          <p>Envíanos tu {isInst ? 'escudo o insignia' : 'logo'}, medidas y cantidad, y te proponemos la mejor pieza.</p>
+        </div>
+        <a class="btn btn--wa" href={waLink(`Hola MagicPrintChile, quiero cotizar productos de la categoría ${cat.name}.`)} target="_blank" rel="noopener"><Icon name="wa" />Cotizar {cat.short ?? cat.name}</a>
+      </aside>
+    </div>
+  </section>
+</Base>
+<style>
+  .subs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.5rem; }
+  .custom { margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; padding: clamp(1.5rem, 3vw, 2.5rem); border-radius: 24px; background: var(--white); border: 1px solid var(--line); }
+  .custom h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 0.4rem 0; }
+  .custom p:last-child { margin: 0; color: var(--muted); }
+</style>

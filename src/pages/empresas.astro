@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ProductImage from '../components/ProductImage.astro';
+import Icon from '../components/Icon.astro';
+import { CORPORATE, catBySlug, products, img } from '../lib/catalog';
+import { waLink } from '../lib/site';
+const cats = CORPORATE.map((s) => ({ c: catBySlug(s)!, p: products.find((x) => x.categories.includes(s))! }));
+const uses = [
+  { t: 'Regalos de fin de año', d: 'Tazones con caja, termos grabados, libretas ecológicas y canastos para clientes y equipo.', links: ['tazones', 'promocionales'] },
+  { t: 'Eventos, ferias y lanzamientos', d: 'Chapitas, llaveros, lápices y lanyards para repartir con tu marca.', links: ['chapitas', 'llaveros', 'lapices'] },
+  { t: 'Uniformes y equipos', d: 'Poleras algodón o dry fit, polerones y jockeys bordados para tu equipo.', links: ['poleras', 'polerones', 'gorros'] },
+  { t: 'Reconocimientos internos', d: 'Galvanos de cristal, metal y madera para premiar a tus colaboradores.', links: ['galvanos'] },
+];
+---
+<Base title="Regalos corporativos y merchandising con tu logo" description="Merchandising y regalos corporativos personalizados: tazones, poleras, polerones, gorros bordados, chapitas, llaveros, lápices, galvanos y más. Cotiza por volumen con MagicPrintChile.">
+  <PageHead eyebrow="Para empresas" title="Merchandising que tu equipo <em>sí usa.</em>" lead="Personalizamos tazones, textiles, chapitas, llaveros y galvanos con tu marca. Cotización por volumen y respuesta rápida." crumbs={[{ href: '/empresas/', label: 'Empresas' }]}>
+    <div class="ctas">
+      <a class="btn btn--red" href={waLink('Hola MagicPrintChile, quiero cotizar merchandising para mi empresa.')} target="_blank" rel="noopener"><Icon name="wa" />Cotizar para mi empresa</a>
+      <a class="btn btn--ghost" href="#categorias">Ver productos</a>
+    </div>
+  </PageHead>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">Ideas por ocasión</p><h2>¿Para qué lo necesitas?</h2></div></div>
+      <div class="uses">
+        {uses.map((u, i) => (
+          <article data-reveal>
+            <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{u.t}</h3>
+            <p>{u.d}</p>
+            <div>{u.links.map((l) => <a class="chip" href={`/categoria/${l}/`}>{catBySlug(l)?.short ?? catBySlug(l)?.name}</a>)}</div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section section--paper2" id="categorias">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">Categorías</p><h2>Elige dónde va tu marca.</h2></div></div>
+      <div class="cats">
+        {cats.map(({ c, p }) => (
+          <a href={`/categoria/${c.slug}/`} data-reveal>
+            <div class="cats__img"><ProductImage src={img(p.images[0])} alt={c.name} widths={[300, 480]} sizes="(min-width: 900px) 22vw, 45vw" /></div>
+            <h3>{c.short ?? c.name}</h3>
+            <p>{c.blurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .ctas { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.8rem; }
+  .uses { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .uses article { padding: 1.6rem; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 0.6rem; }
+  .uses .mono { color: var(--red); font-size: 0.75rem; }
+  .uses h3 { margin: 0.8rem 0 0; }
+  .uses p { color: var(--muted); font-size: 0.95rem; flex: 1; margin: 0; }
+  .uses div { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 1rem; }
+  .cats a { display: flex; flex-direction: column; text-decoration: none; background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); transition: transform 0.4s var(--ease), box-shadow 0.4s; }
+  .cats a:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .cats__img { aspect-ratio: 4/3; padding: 1rem; background: var(--paper); }
+  .cats h3 { margin: 1rem 1.1rem 0.3rem; }
+  .cats p { margin: 0 1.1rem 1.2rem; font-size: 0.9rem; color: var(--muted); }
+  @media (max-width: 1000px) { .uses { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .uses { grid-template-columns: 1fr; } }
+</style>

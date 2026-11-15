@@ -86,7 +86,7 @@ const products = lines.map((line) => {
     description: desc.trim() || null,
     categories: catSlugs,
     primary: primary.slug,
-    sources: imgs.split(';').map((s) => s.trim()).filter(Boolean),
+    sources: imgs.split(';').map((s) => s.replace(/^ +| +$/g, '').replaceAll('{nbsp}', '\u00a0')).filter(Boolean),
     images: imgs.split(';').filter(Boolean).map((_, i) => `${id}-${i + 1}`),
   };
 });

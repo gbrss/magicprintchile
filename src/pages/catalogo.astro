@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Icon from '../components/Icon.astro';
+import { products, topCategories } from '../lib/catalog';
+const order = ['linea-institucional', 'galvanos', 'monedas', 'tazones', 'poleras', 'polerones', 'gorros', 'chapitas', 'llaveros', 'lapices', 'choperos', 'relojes', 'calendarios', 'promocionales'];
+const cats = order.map((s) => topCategories.find((c) => c.slug === s)!).filter(Boolean);
+// orden: institucional y galvanos primero, luego el resto
+const sorted = [...products].sort((a, b) => order.indexOf(a.primary) - order.indexOf(b.primary) || a.id - b.id);
+---
+<Base title="Catálogo de productos personalizados" description={`Catálogo MagicPrintChile: ${products.length} productos personalizables — galvanos, escudos de bronce, monedas, tazones, poleras, gorros bordados, chapitas y más. Cotiza por WhatsApp.`}>
+  <PageHead eyebrow={`${products.length} productos`} title="Catálogo <em>completo</em>" lead="Filtra por categoría o busca por nombre o código (por ejemplo CIM-1002). Agrega lo que te interese a tu cotización." crumbs={[{ href: '/catalogo/', label: 'Catálogo' }]} />
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="tools" id="buscar">
+        <label class="search">
+          <Icon name="search" />
+          <span class="sr-only">Buscar productos</span>
+          <input type="search" placeholder="Buscar: galvano, moneda, tazón, CIM-1002…" data-search-input autocomplete="off" />
+        </label>
+        <div class="chips" role="group" aria-label="Filtrar por categoría">
+          <button class="chip is-active" type="button" data-filter="">Todo <small>{products.length}</small></button>
+          {cats.map((c) => <button class="chip" type="button" data-filter={c.slug}>{c.short ?? c.name} <small>{c.count}</small></button>)}
+        </div>
+      </div>
+      <p class="count" aria-live="polite"><span data-count>{products.length}</span> productos</p>
+      <div class="grid-products" data-grid>
+        {sorted.map((p, i) => <ProductCard product={p} eager={i < 4} />)}
+      </div>
+      <div class="empty" data-empty hidden>
+        <h2>No encontramos ese producto… <em>aún.</em></h2>
+        <p>Fabricamos a pedido: cuéntanos lo que necesitas y te cotizamos.</p>
+        <button class="btn btn--red" type="button" data-quote-open>Describir mi pedido</button>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .tools { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.2rem; scroll-margin-top: 110px; }
+  .search { display: flex; align-items: center; gap: 0.7rem; padding: 0 1.1rem; height: 56px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--white); max-width: 620px; }
+  .search:focus-within { outline: 2px solid var(--brass); }
+  .search input { flex: 1; border: 0; background: transparent; font-size: 1.05rem; outline: none; height: 100%; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .count { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); margin: 0 0 1rem; }
+  .empty { text-align: center; padding: 4rem 1rem; }
+  .empty h2 { font-size: 2.2rem; }
+</style>
+<script>
+  const grid = document.querySelector('[data-grid]')!;
+  const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
+  const input = document.querySelector<HTMLInputElement>('[data-search-input]')!;
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const count = document.querySelector('[data-count]')!;
+  const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+  const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  const params = new URLSearchParams(location.search);
+  let cat = params.get('cat') || '';
+  input.value = params.get('q') || '';
+  function apply() {
+    const words = norm(input.value).split(/\s+/).filter(Boolean);
+    let n = 0;
+    for (const c of cards) {
+      const ok = (!cat || c.dataset.cats!.split(' ').includes(cat)) && words.every((w) => c.dataset.search!.includes(w));
+      c.hidden = !ok;
+      if (ok) n++;
+    }
+    count.textContent = String(n);
+    empty.hidden = n > 0;
+    chips.forEach((b) => b.classList.toggle('is-active', b.dataset.filter === cat));
+    const u = new URL(location.href);
+    input.value ? u.searchParams.set('q', input.value) : u.searchParams.delete('q');
+    cat ? u.searchParams.set('cat', cat) : u.searchParams.delete('cat');
+    history.replaceState(null, '', u);
+  }
+  input.addEventListener('input', apply);
+  chips.forEach((b) => b.addEventListener('click', () => { cat = b.dataset.filter || ''; apply(); }));
+  if (location.hash === '#buscar') input.focus();
+  apply();
+</script>

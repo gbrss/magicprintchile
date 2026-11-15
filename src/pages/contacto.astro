@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { SITE, waLink } from '../lib/site';
+const ld = { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contacto MagicPrintChile', url: `${SITE.url}/contacto/` };
+---
+<Base title="Contacto" description={`Contacta a MagicPrintChile por WhatsApp ${SITE.phone} o al correo ${SITE.email}. Cotizaciones de galvanos, monedas, escudos y regalos corporativos.`} jsonld={[ld]}>
+  <PageHead eyebrow="Ventas online · Todo Chile" title="Hablemos de tu <em>próxima pieza.</em>" lead="La forma más rápida de cotizar es por WhatsApp: envíanos tu logo, medidas y cantidades." crumbs={[{ href: '/contacto/', label: 'Contacto' }]} />
+  <section class="section section--tight">
+    <div class="wrap cards">
+      <a class="ccard ccard--wa" href={waLink('Hola MagicPrintChile, quiero cotizar.')} target="_blank" rel="noopener">
+        <Icon name="wa" size={34} /><span class="eyebrow">WhatsApp</span><strong>{SITE.phone}</strong><span>Respuesta más rápida · envía tu logo</span>
+      </a>
+      <a class="ccard" href={`tel:${SITE.phoneRaw}`}>
+        <Icon name="phone" size={34} /><span class="eyebrow">Teléfono</span><strong>{SITE.phone}</strong><span>Llámanos para consultas</span>
+      </a>
+      <a class="ccard" href={`mailto:${SITE.email}`}>
+        <Icon name="mail" size={34} /><span class="eyebrow">Correo</span><strong>{SITE.email}</strong><span>Ideal para órdenes de compra y licitaciones</span>
+      </a>
+    </div>
+  </section>
+</Base>
+<style>
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .ccard { display: flex; flex-direction: column; gap: 0.6rem; padding: 2rem; border-radius: 24px; background: var(--white); border: 1px solid var(--line); text-decoration: none; transition: transform 0.4s var(--ease), box-shadow 0.4s; }
+  .ccard:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .ccard strong { font-family: var(--f-display); font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 520; word-break: break-word; }
+  .ccard > span:last-child { color: var(--muted); font-size: 0.92rem; }
+  .ccard--wa { background: #0f7a41; color: #fff; border-color: transparent; }
+  .ccard--wa .eyebrow, .ccard--wa > span:last-child { color: rgb(255 255 255 / 0.75); }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+</style>
