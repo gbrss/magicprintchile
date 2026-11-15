@@ -1,0 +1,2540 @@
+{
+ "generated": "2026-11-15",
+ "categories": [
+  {
+   "path": "106",
+   "slug": "linea-institucional",
+   "name": "Defensa y Seguridad",
+   "short": "Institucional",
+   "blurb": "Galvanos, escudos, bustos, monedas y regalos protocolares para Armada, Ejército, Fuerza Aérea y Carabineros.",
+   "parent": null,
+   "count": 56
+  },
+  {
+   "path": "106_107",
+   "slug": "infanteria-de-marina",
+   "name": "Infantería de Marina",
+   "blurb": "Escudos de bronce fundido y resina para batallones, destacamentos y unidades IM.",
+   "parent": "linea-institucional",
+   "count": 15
+  },
+  {
+   "path": "106_111",
+   "slug": "litoral",
+   "name": "Litoral",
+   "blurb": "Galvanos con piocha de bronce, cristales, cofres, remos y portasables para la Dirección del Litoral.",
+   "parent": "linea-institucional",
+   "count": 10
+  },
+  {
+   "path": "106_110",
+   "slug": "ejercito",
+   "name": "Ejército",
+   "blurb": "Galvanos de resina bronce envejecido, bustos, cofres para gallardete y llaveros institucionales.",
+   "parent": "linea-institucional",
+   "count": 10
+  },
+  {
+   "path": "106_108",
+   "slug": "fuerza-aerea",
+   "name": "Fuerza Aérea",
+   "blurb": "Galvanos de bronce, bustos de piloto, termos grabados y tazones con grados.",
+   "parent": "linea-institucional",
+   "count": 10
+  },
+  {
+   "path": "106_109",
+   "slug": "carabineros",
+   "name": "Carabineros",
+   "blurb": "Monedas, herretes, galvanos 3D y llaveros para unidades de Carabineros de Chile.",
+   "parent": "linea-institucional",
+   "count": 10
+  },
+  {
+   "path": "106_112",
+   "slug": "fraternidad-de-la-costa",
+   "name": "Fraternidad de la Costa",
+   "blurb": "Piezas náuticas y galvanos para la Hermandad de la Costa.",
+   "parent": "linea-institucional",
+   "count": 0
+  },
+  {
+   "path": "65",
+   "slug": "galvanos",
+   "name": "Galvanos",
+   "short": "Galvanos",
+   "blurb": "Galvanos de bronce, cristal, metal y grabado láser para reconocimientos, aniversarios y ceremonias.",
+   "parent": null,
+   "count": 14
+  },
+  {
+   "path": "65_68",
+   "slug": "galvanos-de-bronce",
+   "name": "Galvanos de bronce",
+   "blurb": "Fundición en bronce sobre maderas nobles.",
+   "parent": "galvanos",
+   "count": 2
+  },
+  {
+   "path": "65_66",
+   "slug": "galvanos-de-cristal",
+   "name": "Galvanos de cristal y acrílico",
+   "blurb": "Cristal y acrílico grabado, elegantes y livianos.",
+   "parent": "galvanos",
+   "count": 4
+  },
+  {
+   "path": "65_67",
+   "slug": "galvanos-de-metal",
+   "name": "Galvanos de metal",
+   "blurb": "Impresión full color en placas metálicas dorada, plateada y blanca.",
+   "parent": "galvanos",
+   "count": 3
+  },
+  {
+   "path": "65_69",
+   "slug": "galvanos-laser",
+   "name": "Galvanos en láser",
+   "blurb": "Grabado láser sobre raulí, MDF y placas.",
+   "parent": "galvanos",
+   "count": 5
+  },
+  {
+   "path": "104",
+   "slug": "monedas",
+   "name": "Monedas conmemorativas",
+   "short": "Monedas",
+   "blurb": "Challenge coins y monedas institucionales acuñadas, con caja.",
+   "parent": null,
+   "count": 8
+  },
+  {
+   "path": "77",
+   "slug": "tazones",
+   "name": "Tazones",
+   "short": "Tazones",
+   "blurb": "Tazones sublimados blancos, dorados, plateados y mágicos, con caja.",
+   "parent": null,
+   "count": 5
+  },
+  {
+   "path": "77_96",
+   "slug": "tazones-publicitarios",
+   "name": "Tazones publicitarios",
+   "blurb": "Tu logo o diseño sublimado.",
+   "parent": "tazones",
+   "count": 5
+  },
+  {
+   "path": "77_97",
+   "slug": "tazones-insumos",
+   "name": "Tazones insumos",
+   "blurb": "Tazones con Polycoat para sublimar.",
+   "parent": "tazones",
+   "count": 5
+  },
+  {
+   "path": "59",
+   "slug": "poleras",
+   "name": "Poleras",
+   "short": "Poleras",
+   "blurb": "Poleras de algodón y dry fit estampadas con tu diseño.",
+   "parent": null,
+   "count": 6
+  },
+  {
+   "path": "59_93",
+   "slug": "poleras-publicitarias",
+   "name": "Poleras publicitarias",
+   "blurb": "Estampado para empresas, eventos y equipos.",
+   "parent": "poleras",
+   "count": 6
+  },
+  {
+   "path": "59_92",
+   "slug": "poleras-insumos",
+   "name": "Poleras insumos",
+   "blurb": "Poleras para sublimar y estampar.",
+   "parent": "poleras",
+   "count": 6
+  },
+  {
+   "path": "60",
+   "slug": "polerones",
+   "name": "Polerones",
+   "short": "Polerones",
+   "blurb": "Polerones y micropolar bordados o estampados.",
+   "parent": null,
+   "count": 1
+  },
+  {
+   "path": "60_95",
+   "slug": "polerones-publicitarios",
+   "name": "Polerones publicitarios",
+   "blurb": "Con tu marca bordada o estampada.",
+   "parent": "polerones",
+   "count": 1
+  },
+  {
+   "path": "60_94",
+   "slug": "polerones-insumos",
+   "name": "Polerones insumos",
+   "blurb": "Polerones lisos para personalizar.",
+   "parent": "polerones",
+   "count": 1
+  },
+  {
+   "path": "71",
+   "slug": "gorros",
+   "name": "Gorros bordados",
+   "short": "Gorros",
+   "blurb": "Jockeys bordados en denim, cuero y gabardina.",
+   "parent": null,
+   "count": 6
+  },
+  {
+   "path": "71_83",
+   "slug": "gorros-publicitarios",
+   "name": "Gorros publicitarios",
+   "blurb": "Bordado de logos e insignias.",
+   "parent": "gorros",
+   "count": 6
+  },
+  {
+   "path": "71_82",
+   "slug": "gorros-insumos",
+   "name": "Gorros insumos",
+   "blurb": "Jockeys lisos para bordar.",
+   "parent": "gorros",
+   "count": 0
+  },
+  {
+   "path": "98",
+   "slug": "chapitas",
+   "name": "Chapitas",
+   "short": "Chapitas",
+   "blurb": "Chapitas publicitarias, máquinas e insumos para chapas americanas.",
+   "parent": null,
+   "count": 6
+  },
+  {
+   "path": "98_100",
+   "slug": "chapitas-publicitarias",
+   "name": "Chapitas publicitarias",
+   "blurb": "Chapitas con tu diseño.",
+   "parent": "chapitas",
+   "count": 6
+  },
+  {
+   "path": "98_99",
+   "slug": "chapitas-insumos",
+   "name": "Chapitas insumos",
+   "blurb": "Insumos de 32 a 75 mm.",
+   "parent": "chapitas",
+   "count": 1
+  },
+  {
+   "path": "74",
+   "slug": "llaveros",
+   "name": "Llaveros",
+   "short": "Llaveros",
+   "blurb": "Llaveros metálicos, acrílicos y lanyards personalizados.",
+   "parent": null,
+   "count": 3
+  },
+  {
+   "path": "74_88",
+   "slug": "llaveros-publicitarios",
+   "name": "Llaveros publicitarios",
+   "blurb": "Llaveros con tu marca.",
+   "parent": "llaveros",
+   "count": 3
+  },
+  {
+   "path": "74_89",
+   "slug": "llaveros-insumos",
+   "name": "Llaveros insumos",
+   "blurb": "Llaveros para personalizar.",
+   "parent": "llaveros",
+   "count": 3
+  },
+  {
+   "path": "73",
+   "slug": "lapices",
+   "name": "Lápices",
+   "short": "Lápices",
+   "blurb": "Lápices publicitarios grabados o impresos.",
+   "parent": null,
+   "count": 1
+  },
+  {
+   "path": "73_86",
+   "slug": "lapices-publicitarios",
+   "name": "Lápices publicitarios",
+   "blurb": "Con tu logo.",
+   "parent": "lapices",
+   "count": 1
+  },
+  {
+   "path": "73_87",
+   "slug": "lapices-insumos",
+   "name": "Lápices insumos",
+   "blurb": "Lápices para personalizar.",
+   "parent": "lapices",
+   "count": 1
+  },
+  {
+   "path": "63",
+   "slug": "choperos",
+   "name": "Choperos",
+   "short": "Choperos",
+   "blurb": "Choperos de vidrio y cerámica personalizados.",
+   "parent": null,
+   "count": 2
+  },
+  {
+   "path": "63_79",
+   "slug": "choperos-publicitarios",
+   "name": "Choperos publicitarios",
+   "blurb": "Con tu diseño.",
+   "parent": "choperos",
+   "count": 0
+  },
+  {
+   "path": "63_78",
+   "slug": "choperos-insumos",
+   "name": "Choperos insumos",
+   "blurb": "Choperos para sublimar.",
+   "parent": "choperos",
+   "count": 2
+  },
+  {
+   "path": "76",
+   "slug": "relojes",
+   "name": "Relojes",
+   "short": "Relojes",
+   "blurb": "Relojes de madera personalizados.",
+   "parent": null,
+   "count": 1
+  },
+  {
+   "path": "62",
+   "slug": "calendarios",
+   "name": "Calendarios",
+   "short": "Calendarios",
+   "blurb": "Calendarios personalizados para empresas e instituciones.",
+   "parent": null,
+   "count": 1
+  },
+  {
+   "path": "61",
+   "slug": "promocionales",
+   "name": "Promocionales y ofertas",
+   "short": "Promocionales",
+   "blurb": "Balones, libretas ecológicas, lanyards, canastos y textiles para regalos corporativos.",
+   "parent": null,
+   "count": 6
+  }
+ ],
+ "products": [
+  {
+   "id": 53,
+   "slug": "chopero-transparente",
+   "name": "Chopero transparente",
+   "code": null,
+   "description": null,
+   "categories": [
+    "choperos",
+    "choperos-insumos"
+   ],
+   "primary": "choperos",
+   "sources": [
+    "productos/choperos/chopero trnasparente.jpg"
+   ],
+   "images": [
+    "53-1"
+   ]
+  },
+  {
+   "id": 54,
+   "slug": "chopero-ceramico-blanco",
+   "name": "Chopero cerámico blanco",
+   "code": null,
+   "description": null,
+   "categories": [
+    "choperos",
+    "choperos-insumos"
+   ],
+   "primary": "choperos",
+   "sources": [
+    "productos/choperos/choperos1.jpg"
+   ],
+   "images": [
+    "54-1"
+   ]
+  },
+  {
+   "id": 55,
+   "slug": "polera-personalizada",
+   "name": "Polera personalizada",
+   "code": null,
+   "description": null,
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/poleras im.jpg"
+   ],
+   "images": [
+    "55-1"
+   ]
+  },
+  {
+   "id": 58,
+   "slug": "chapita-buque-escuela-esmeralda",
+   "name": "Chapita Buque Escuela Esmeralda",
+   "code": null,
+   "description": null,
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/be 2.jpg"
+   ],
+   "images": [
+    "58-1"
+   ]
+  },
+  {
+   "id": 61,
+   "slug": "chapita-escuela-naval",
+   "name": "Chapita Escuela Naval",
+   "code": null,
+   "description": null,
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/chapita escuela naval.jpg",
+    "productos/chapitas/grados oficiales .jpg"
+   ],
+   "images": [
+    "61-1",
+    "61-2"
+   ]
+  },
+  {
+   "id": 62,
+   "slug": "chapitas-insumos",
+   "name": "Chapitas: insumos",
+   "code": null,
+   "description": "Venta de chapas americanas en tamaños 75 mm, 58 mm, 56 mm, 45 mm y 32 mm.",
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas-insumos",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/chapirta bencalada.jpg"
+   ],
+   "images": [
+    "62-1"
+   ]
+  },
+  {
+   "id": 63,
+   "slug": "chapita-monitor-huascar",
+   "name": "Chapita Monitor Huáscar",
+   "code": null,
+   "description": null,
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/mh.jpg"
+   ],
+   "images": [
+    "63-1"
+   ]
+  },
+  {
+   "id": 64,
+   "slug": "chapita-de-chile",
+   "name": "Chapita de Chile",
+   "code": null,
+   "description": null,
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/chpitas 2.jpg"
+   ],
+   "images": [
+    "64-1"
+   ]
+  },
+  {
+   "id": 65,
+   "slug": "balon-de-futbol-n5",
+   "name": "Balón de fútbol N°5",
+   "code": null,
+   "description": "Balón de fútbol N°5 de cuero sintético PVC de 2.0 mm, 32 paneles hexagonales (2 pares fusionados para logos horizontales de mayor tamaño), 2 capas, costuras a máquina y cámara de aire de goma. Incluye aguja infladora.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "FORMATO PARA HACER VENTAS.jpg"
+   ],
+   "images": [
+    "65-1"
+   ]
+  },
+  {
+   "id": 66,
+   "slug": "chapita-club-suboficial-mayor-naval",
+   "name": "Chapita Club Suboficial Mayor Naval",
+   "code": null,
+   "description": null,
+   "categories": [
+    "chapitas-publicitarias",
+    "chapitas"
+   ],
+   "primary": "chapitas",
+   "sources": [
+    "productos/chapitas/som.jpg"
+   ],
+   "images": [
+    "66-1"
+   ]
+  },
+  {
+   "id": 67,
+   "slug": "canasto-spa",
+   "name": "Canasto spa",
+   "code": null,
+   "description": "Canasto spa de belleza en madera modelo \"Naturals\". Contiene cepillo de pelo, esponja malla, masajeador de madera, piedra pómez y esponja de masaje corporal.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "canasto.jpg"
+   ],
+   "images": [
+    "67-1"
+   ]
+  },
+  {
+   "id": 68,
+   "slug": "libreta-ecologica",
+   "name": "Libreta ecológica",
+   "code": null,
+   "description": "Libreta con tapas de cartón reciclado y 50 hojas interiores blancas (croquera). Incluye cierre elasticado de color y bolígrafo ecológico al tono.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "libreta ecologica.jpg"
+   ],
+   "images": [
+    "68-1"
+   ]
+  },
+  {
+   "id": 69,
+   "slug": "llavero-lanyard-mosqueton",
+   "name": "Llavero lanyard mosquetón",
+   "code": null,
+   "description": "Llavero-lanyard de poliéster con anillo porta-llaves y mosquetón metálico grande.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "mosqueton ok1.jpg"
+   ],
+   "images": [
+    "69-1"
+   ]
+  },
+  {
+   "id": 70,
+   "slug": "chaqueta-micropolar-hombre-manga-larga",
+   "name": "Chaqueta micropolar hombre manga larga",
+   "code": null,
+   "description": "Chaqueta de micropolar 100% poliéster de 300 g/m², para hombre, manga larga. Presentación individual en bolsa de polipropileno transparente. Bordamos tu logo.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "polar bordado con logo.jpg"
+   ],
+   "images": [
+    "70-1"
+   ]
+  },
+  {
+   "id": 71,
+   "slug": "polera-dry-fit-manga-corta",
+   "name": "Polera dry fit manga corta",
+   "code": null,
+   "description": "Polera 100% poliéster de 150 g/m², para hombre, cuello en V y manga corta. Ideal para deportes: estampamos delantero, espalda y mangas donde quieras.",
+   "categories": [
+    "promocionales"
+   ],
+   "primary": "promocionales",
+   "sources": [
+    "polera formato.jpg"
+   ],
+   "images": [
+    "71-1"
+   ]
+  },
+  {
+   "id": 72,
+   "slug": "calendarios-personalizados",
+   "name": "Calendarios personalizados",
+   "code": null,
+   "description": null,
+   "categories": [
+    "calendarios"
+   ],
+   "primary": "calendarios",
+   "sources": [
+    "productos/calendario/CALENDARIOS.jpg"
+   ],
+   "images": [
+    "72-1"
+   ]
+  },
+  {
+   "id": 79,
+   "slug": "galvano-acrilico-modelo-1",
+   "name": "Galvano acrílico modelo 1",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-cristal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos acrilicos/cristal 34.jpg"
+   ],
+   "images": [
+    "79-1"
+   ]
+  },
+  {
+   "id": 80,
+   "slug": "galvano-acrilico-modelo-2",
+   "name": "Galvano acrílico modelo 2",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-cristal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos acrilicos/cristal im.jpg"
+   ],
+   "images": [
+    "80-1"
+   ]
+  },
+  {
+   "id": 81,
+   "slug": "galvano-acrilico-modelo-3",
+   "name": "Galvano acrílico modelo 3",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-cristal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos acrilicos/cristales.jpg"
+   ],
+   "images": [
+    "81-1"
+   ]
+  },
+  {
+   "id": 82,
+   "slug": "galvano-acrilico-modelo-4",
+   "name": "Galvano acrílico modelo 4",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-cristal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos acrilicos/d.jpg"
+   ],
+   "images": [
+    "82-1"
+   ]
+  },
+  {
+   "id": 88,
+   "slug": "galvano-de-bronce-escultura",
+   "name": "Galvano de bronce escultura",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-bronce"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en bronce/galvanos bronce.jpg"
+   ],
+   "images": [
+    "88-1"
+   ]
+  },
+  {
+   "id": 89,
+   "slug": "galvano-de-metal-promocion-grumetes",
+   "name": "Galvano de metal Promoción Grumetes",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-metal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos  de metales/metales 2.jpg"
+   ],
+   "images": [
+    "89-1"
+   ]
+  },
+  {
+   "id": 91,
+   "slug": "galvano-de-metal-capitania-de-puerto-y-gobernaciones",
+   "name": "Galvano de metal Capitanía de Puerto y Gobernaciones",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-metal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos  de metales/grabados en metales.jpg",
+    "general carrera.png",
+    "placas 1.png",
+    "24067785_1535964923148091_73932391197862538_n.jpg"
+   ],
+   "images": [
+    "91-1",
+    "91-2",
+    "91-3",
+    "91-4"
+   ]
+  },
+  {
+   "id": 94,
+   "slug": "galvano-de-metal-oracion-del-comando",
+   "name": "Galvano de metal Oración del Comando",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-de-metal"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos  de metales/metal 7 oracion comando.jpg"
+   ],
+   "images": [
+    "94-1"
+   ]
+  },
+  {
+   "id": 95,
+   "slug": "galvano-laser-suboficial-mayor",
+   "name": "Galvano láser Suboficial Mayor",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-laser"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en laser/12670466_956661744411748_5370913533043772318_n.jpg"
+   ],
+   "images": [
+    "95-1"
+   ]
+  },
+  {
+   "id": 96,
+   "slug": "galvano-laser-armada-de-chile",
+   "name": "Galvano láser Armada de Chile",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-laser"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en laser/12670559_956661557745100_3586823445333146138_n.jpg"
+   ],
+   "images": [
+    "96-1"
+   ]
+  },
+  {
+   "id": 97,
+   "slug": "galvano-laser-en-rauli",
+   "name": "Galvano láser en raulí",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-laser"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en laser/galvanos rauli.jpg"
+   ],
+   "images": [
+    "97-1"
+   ]
+  },
+  {
+   "id": 99,
+   "slug": "galvano-laser-con-campana",
+   "name": "Galvano láser con campana",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-laser"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en laser/12661851_956662324411690_1191991339382243270_n.jpg"
+   ],
+   "images": [
+    "99-1"
+   ]
+  },
+  {
+   "id": 100,
+   "slug": "placas-grabadas",
+   "name": "Placas grabadas",
+   "code": null,
+   "description": null,
+   "categories": [
+    "galvanos",
+    "galvanos-laser"
+   ],
+   "primary": "galvanos",
+   "sources": [
+    "productos/galvanos/galvanos en laser/galvano solocafe.jpg",
+    "DB11013 27X33 CM.jpg"
+   ],
+   "images": [
+    "100-1",
+    "100-2"
+   ]
+  },
+  {
+   "id": 103,
+   "slug": "gorro-bordado-camba",
+   "name": "Gorro bordado camba",
+   "code": null,
+   "description": null,
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/camba 3.jpg"
+   ],
+   "images": [
+    "103-1"
+   ]
+  },
+  {
+   "id": 104,
+   "slug": "gorro-bordado-cuero-negro",
+   "name": "Gorro bordado cuero negro",
+   "code": null,
+   "description": null,
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/cuero 2.jpg"
+   ],
+   "images": [
+    "104-1"
+   ]
+  },
+  {
+   "id": 105,
+   "slug": "gorro-bordado-cuero-verde",
+   "name": "Gorro bordado cuero verde",
+   "code": null,
+   "description": null,
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/cuero verde.jpg"
+   ],
+   "images": [
+    "105-1"
+   ]
+  },
+  {
+   "id": 106,
+   "slug": "gorro-bordado-denim-azul",
+   "name": "Gorro bordado denim azul",
+   "code": null,
+   "description": null,
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/denin 21.jpg"
+   ],
+   "images": [
+    "106-1"
+   ]
+  },
+  {
+   "id": 107,
+   "slug": "gorro-bordado-beige",
+   "name": "Gorro bordado beige",
+   "code": null,
+   "description": "Jockey denim de 6 paneles, 100% algodón peinado, con traba posterior metálica.",
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/gorros d.jpg"
+   ],
+   "images": [
+    "107-1"
+   ]
+  },
+  {
+   "id": 108,
+   "slug": "gorro-bordado-denim-negro",
+   "name": "Gorro bordado denim negro",
+   "code": null,
+   "description": null,
+   "categories": [
+    "gorros",
+    "gorros-publicitarios"
+   ],
+   "primary": "gorros",
+   "sources": [
+    "productos/gorros bordados/denin 34.jpg"
+   ],
+   "images": [
+    "108-1"
+   ]
+  },
+  {
+   "id": 110,
+   "slug": "lapices-publicitarios",
+   "name": "Lápices publicitarios",
+   "code": null,
+   "description": null,
+   "categories": [
+    "lapices",
+    "lapices-publicitarios",
+    "lapices-insumos"
+   ],
+   "primary": "lapices",
+   "sources": [
+    "productos/lapices/lapices.jpg"
+   ],
+   "images": [
+    "110-1"
+   ]
+  },
+  {
+   "id": 111,
+   "slug": "llaveros-acrilicos",
+   "name": "Llaveros acrílicos",
+   "code": null,
+   "description": null,
+   "categories": [
+    "llaveros",
+    "llaveros-publicitarios",
+    "llaveros-insumos"
+   ],
+   "primary": "llaveros",
+   "sources": [
+    "productos/llaveros/llaveros de acrilico.jpg"
+   ],
+   "images": [
+    "111-1"
+   ]
+  },
+  {
+   "id": 113,
+   "slug": "llaveros-metalicos",
+   "name": "Llaveros metálicos",
+   "code": null,
+   "description": null,
+   "categories": [
+    "llaveros",
+    "llaveros-publicitarios",
+    "llaveros-insumos"
+   ],
+   "primary": "llaveros",
+   "sources": [
+    "productos/llaveros/llavero metalico 4.jpg"
+   ],
+   "images": [
+    "113-1"
+   ]
+  },
+  {
+   "id": 116,
+   "slug": "llavero-escuela-naval",
+   "name": "Llavero Escuela Naval",
+   "code": null,
+   "description": null,
+   "categories": [
+    "llaveros",
+    "llaveros-publicitarios",
+    "llaveros-insumos"
+   ],
+   "primary": "llaveros",
+   "sources": [
+    "productos/llaveros/llavero escuela nava.jpg"
+   ],
+   "images": [
+    "116-1"
+   ]
+  },
+  {
+   "id": 120,
+   "slug": "polera-nautica",
+   "name": "Polera náutica",
+   "code": null,
+   "description": null,
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/poleras nauticas.jpg"
+   ],
+   "images": [
+    "120-1"
+   ]
+  },
+  {
+   "id": 121,
+   "slug": "polera-nautica-algodon",
+   "name": "Polera náutica algodón",
+   "code": null,
+   "description": "Polera 100% algodón prelavado de 180 g/m², para hombre, cuello redondo y manga corta. Presentación individual en bolsa de polipropileno transparente.",
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/12592610_992882644122991_1652302301479669521_n.jpg"
+   ],
+   "images": [
+    "121-1"
+   ]
+  },
+  {
+   "id": 122,
+   "slug": "polera-infanteria-de-marina",
+   "name": "Polera Infantería de Marina",
+   "code": null,
+   "description": "Polera 100% algodón prelavado de 180 g/m², para hombre, cuello redondo y manga corta. Presentación individual en bolsa de polipropileno transparente.",
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/poleras im 23.jpg"
+   ],
+   "images": [
+    "122-1"
+   ]
+  },
+  {
+   "id": 123,
+   "slug": "polera-infanteria-de-marina-modelo-2",
+   "name": "Polera Infantería de Marina modelo 2",
+   "code": null,
+   "description": null,
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/polera 34.jpg"
+   ],
+   "images": [
+    "123-1"
+   ]
+  },
+  {
+   "id": 124,
+   "slug": "polera-personalizada-modelo-2",
+   "name": "Polera personalizada modelo 2",
+   "code": null,
+   "description": null,
+   "categories": [
+    "poleras",
+    "poleras-publicitarias",
+    "poleras-insumos"
+   ],
+   "primary": "poleras",
+   "sources": [
+    "productos/poleras/polera 35.jpg"
+   ],
+   "images": [
+    "124-1"
+   ]
+  },
+  {
+   "id": 125,
+   "slug": "polerones-personalizados",
+   "name": "Polerones personalizados",
+   "code": null,
+   "description": "Polerón 1/2 zip, 65% poliéster y 35% algodón, 280 g. Costuras reforzadas, terminación rib en cuello, puños y cintura, y tirador de cierre.",
+   "categories": [
+    "polerones",
+    "polerones-insumos",
+    "polerones-publicitarios"
+   ],
+   "primary": "polerones",
+   "sources": [
+    "productos/polerones/polerones.jpg"
+   ],
+   "images": [
+    "125-1"
+   ]
+  },
+  {
+   "id": 127,
+   "slug": "reloj-de-madera",
+   "name": "Reloj de madera",
+   "code": null,
+   "description": null,
+   "categories": [
+    "relojes"
+   ],
+   "primary": "relojes",
+   "sources": [
+    "productos/relojes/relojes.jpg"
+   ],
+   "images": [
+    "127-1"
+   ]
+  },
+  {
+   "id": 128,
+   "slug": "tazon-blanco-para-sublimacion",
+   "name": "Tazón blanco para sublimación",
+   "code": null,
+   "description": "Tazón cerámico extra blanco de 320 cc con cobertura especial \"Polycoat\" para sublimación. Cada unidad en su caja de cartón blanco.",
+   "categories": [
+    "tazones",
+    "tazones-insumos",
+    "tazones-publicitarios"
+   ],
+   "primary": "tazones",
+   "sources": [
+    "productos/tazones/tazon blanco.jpg"
+   ],
+   "images": [
+    "128-1"
+   ]
+  },
+  {
+   "id": 129,
+   "slug": "tazon-plateado",
+   "name": "Tazón plateado",
+   "code": null,
+   "description": null,
+   "categories": [
+    "tazones",
+    "tazones-insumos",
+    "tazones-publicitarios"
+   ],
+   "primary": "tazones",
+   "sources": [
+    "productos/tazones/tazon plateado.jpg"
+   ],
+   "images": [
+    "129-1"
+   ]
+  },
+  {
+   "id": 130,
+   "slug": "tazon-dorado",
+   "name": "Tazón dorado",
+   "code": null,
+   "description": "Tazón cerámico de exterior dorado e interior blanco, con cobertura \"Polycoat\" para sublimación. Se entrega en caja individual de cartón blanco.",
+   "categories": [
+    "tazones",
+    "tazones-insumos",
+    "tazones-publicitarios"
+   ],
+   "primary": "tazones",
+   "sources": [
+    "productos/tazones/tazon dorado.jpg"
+   ],
+   "images": [
+    "130-1"
+   ]
+  },
+  {
+   "id": 131,
+   "slug": "tazon-magico",
+   "name": "Tazón mágico",
+   "code": null,
+   "description": null,
+   "categories": [
+    "tazones",
+    "tazones-insumos",
+    "tazones-publicitarios"
+   ],
+   "primary": "tazones",
+   "sources": [
+    "productos/tazones/tazones magico.jpg"
+   ],
+   "images": [
+    "131-1"
+   ]
+  },
+  {
+   "id": 132,
+   "slug": "tazon-con-nombres-y-grados",
+   "name": "Tazón con nombres y grados",
+   "code": null,
+   "description": null,
+   "categories": [
+    "tazones",
+    "tazones-insumos",
+    "tazones-publicitarios"
+   ],
+   "primary": "tazones",
+   "sources": [
+    "productos/tazones/TAZONES CON NOMBRES Y GRADOS.jpg"
+   ],
+   "images": [
+    "132-1"
+   ]
+  },
+  {
+   "id": 135,
+   "slug": "moneda-infanteria-de-marina",
+   "name": "Moneda Infantería de Marina",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/IMCUERPO IM MONEDA.jpg"
+   ],
+   "images": [
+    "135-1"
+   ]
+  },
+  {
+   "id": 136,
+   "slug": "moneda-armada-de-chile",
+   "name": "Moneda Armada de Chile",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/61633865_2246810528902594_4504768292266704896_n.jpg"
+   ],
+   "images": [
+    "136-1"
+   ]
+  },
+  {
+   "id": 137,
+   "slug": "moneda-carabineros-de-chile",
+   "name": "Moneda Carabineros de Chile",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/69512616_902746733437551_4630059231389679616_n.jpg"
+   ],
+   "images": [
+    "137-1"
+   ]
+  },
+  {
+   "id": 138,
+   "slug": "moneda-buceadores-de-combate",
+   "name": "Moneda Buceadores de Combate",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/69522942_901332046912353_1768854011382857728_n.jpg"
+   ],
+   "images": [
+    "138-1"
+   ]
+  },
+  {
+   "id": 139,
+   "slug": "moneda-bt",
+   "name": "Moneda BT",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/69646702_901332010245690_1039843833271025664_n.jpg"
+   ],
+   "images": [
+    "139-1"
+   ]
+  },
+  {
+   "id": 140,
+   "slug": "moneda-batallon-n31",
+   "name": "Moneda Batallón N°31",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/BATALLON IM N 3 ALDEA.jpg"
+   ],
+   "images": [
+    "140-1"
+   ]
+  },
+  {
+   "id": 141,
+   "slug": "moneda-esmeralda",
+   "name": "Moneda Esmeralda",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/MONEDA ESMERALDA.jpg"
+   ],
+   "images": [
+    "141-1"
+   ]
+  },
+  {
+   "id": 142,
+   "slug": "moneda-unidad-buceadores-de-combate",
+   "name": "Moneda Unidad Buceadores de Combate",
+   "code": null,
+   "description": null,
+   "categories": [
+    "monedas"
+   ],
+   "primary": "monedas",
+   "sources": [
+    "productos/monedas/69356544_901331940245697_2114676106517807104_n.jpg"
+   ],
+   "images": [
+    "142-1"
+   ]
+  },
+  {
+   "id": 143,
+   "slug": "escudo-de-bronce-fundido-base-madera-batallon-im-n41-hurtado",
+   "name": "Escudo de bronce fundido, base madera — Batallón IM N°41 \"Hurtado\"",
+   "code": "CIM-1002",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/E-112-F.png"
+   ],
+   "images": [
+    "143-1"
+   ]
+  },
+  {
+   "id": 144,
+   "slug": "escudo-de-bronce-fundido-base-madera-base-vim-tumbes",
+   "name": "Escudo de bronce fundido, base madera — Base VIM Tumbes",
+   "code": "CIM-1001",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/E-112-H.png"
+   ],
+   "images": [
+    "144-1"
+   ]
+  },
+  {
+   "id": 145,
+   "slug": "escudo-de-bronce-fundido-base-madera-destacamento-im-cochrane",
+   "name": "Escudo de bronce fundido, base madera — Destacamento IM Cochrane",
+   "code": "CIM-1003",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/E-112-J-2.png"
+   ],
+   "images": [
+    "145-1"
+   ]
+  },
+  {
+   "id": 146,
+   "slug": "escudo-de-bronce-fundido-base-madera-centro-de-abastecimiento-im",
+   "name": "Escudo de bronce fundido, base madera — Centro de Abastecimiento IM",
+   "code": "CIM-1005",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/E-112-O.png"
+   ],
+   "images": [
+    "146-1"
+   ]
+  },
+  {
+   "id": 147,
+   "slug": "escudo-de-bronce-fundido-base-madera-brigada-anfibia-expedicionaria",
+   "name": "Escudo de bronce fundido, base madera — Brigada Anfibia Expedicionaria",
+   "code": "CIM-1004",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/E-112-N.png"
+   ],
+   "images": [
+    "147-1"
+   ]
+  },
+  {
+   "id": 148,
+   "slug": "piocha-infanteria-de-marina-en-bronce-fundido-base-de-madera",
+   "name": "Piocha Infantería de Marina en bronce fundido, base de madera",
+   "code": "CIM-1006",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/piochas/CIM-1006.png"
+   ],
+   "images": [
+    "148-1"
+   ]
+  },
+  {
+   "id": 149,
+   "slug": "galvano-escudo-nacional-de-bronce",
+   "name": "Galvano Escudo Nacional de bronce",
+   "code": "GENB-1001",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "galvanos",
+    "galvanos-de-bronce"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/galvanos/GALVANO ESCUDO NACIONAL DE BRONCE.jpg"
+   ],
+   "images": [
+    "149-1"
+   ]
+  },
+  {
+   "id": 150,
+   "slug": "escudo-de-resina-color-bronce-base-madera-comandancia-general-cuerpo-im",
+   "name": "Escudo de resina color bronce, base madera — Comandancia General Cuerpo IM",
+   "code": "CIM-1006",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, COMANDANCIA GENERAL CUERPO IM.jpg"
+   ],
+   "images": [
+    "150-1"
+   ]
+  },
+  {
+   "id": 151,
+   "slug": "escudo-de-resina-color-bronce-base-madera-centro-de-abastecimiento-im",
+   "name": "Escudo de resina color bronce, base madera — Centro de Abastecimiento IM",
+   "code": "CIM-1007",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, CENTRO ABASTECIMIENTO IM.jpg"
+   ],
+   "images": [
+    "151-1"
+   ]
+  },
+  {
+   "id": 152,
+   "slug": "escudo-de-resina-color-bronce-base-madera-cuerpo-de-infanteria-de-marina",
+   "name": "Escudo de resina color bronce, base madera — Cuerpo de Infantería de Marina",
+   "code": "CIM-1008",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, CUERPO DE INFANTERÍA DE MARINA.jpg"
+   ],
+   "images": [
+    "152-1"
+   ]
+  },
+  {
+   "id": 153,
+   "slug": "escudo-de-resina-color-bronce-base-madera-brigada-anfibia-expedicionaria",
+   "name": "Escudo de resina color bronce, base madera — Brigada Anfibia Expedicionaria",
+   "code": "CIM-1009",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, BRIGADA ANFIBIA EXPEDICIONARIA INFANTERIA DE MARINA.jpg"
+   ],
+   "images": [
+    "153-1"
+   ]
+  },
+  {
+   "id": 154,
+   "slug": "escudo-de-resina-color-bronce-base-madera-base-im-concon",
+   "name": "Escudo de resina color bronce, base madera — Base IM Concón",
+   "code": "CIM-1010",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, BASE INFANTERIA DE MARINA CONCÓN.jpg"
+   ],
+   "images": [
+    "154-1"
+   ]
+  },
+  {
+   "id": 155,
+   "slug": "escudo-de-resina-color-bronce-base-madera-guarnicion-im-isla-de-pascua",
+   "name": "Escudo de resina color bronce, base madera — Guarnición IM Isla de Pascua",
+   "code": "CIM-1011",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, GUARNICIÓN INFANTERIA DE MARINA , ISLA DE PASCUA.jpg"
+   ],
+   "images": [
+    "155-1"
+   ]
+  },
+  {
+   "id": 156,
+   "slug": "escudo-de-resina-color-bronce-base-madera-centro-de-entrenamiento-basico-im",
+   "name": "Escudo de resina color bronce, base madera — Centro de Entrenamiento Básico IM",
+   "code": "CIM-1012",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, CENTRO DE ENTRENAMIENTO BÁSICO INFANTERIA DE MARINA.jpg"
+   ],
+   "images": [
+    "156-1"
+   ]
+  },
+  {
+   "id": 157,
+   "slug": "escudo-de-resina-color-bronce-base-madera-destacamento-im-n4-cochrane",
+   "name": "Escudo de resina color bronce, base madera — Destacamento IM N°4 Cochrane",
+   "code": "CIM-1013",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, DESTACAMENTO INFANTERIA DE MARINA Nº 4 COCHRANE.jpg"
+   ],
+   "images": [
+    "157-1"
+   ]
+  },
+  {
+   "id": 158,
+   "slug": "escudo-de-resina-color-bronce-base-madera-comando-de-brigada",
+   "name": "Escudo de resina color bronce, base madera — Comando de Brigada",
+   "code": "CIM-1014",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "infanteria-de-marina"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/infanteria-de-marina/escudos-im/ESCUDO DE RESINA COLOR BRONCE, BASE MADERA, COMANDO DE BRIGADA.jpg"
+   ],
+   "images": [
+    "158-1"
+   ]
+  },
+  {
+   "id": 159,
+   "slug": "tazones-con-grados-de-oficiales-fuerza-aerea-con-caja",
+   "name": "Tazones con grados de oficiales Fuerza Aérea, con caja",
+   "code": "FA-1001",
+   "description": "Tazones con grados de oficiales de la Fuerza Aérea o cualquier diseño que necesites, entregados con caja.",
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/TAZONES CON GRADOS DE OFICIALES FUERZA AEREA Y CUALQUIER DISEÑO CON CAJA.jpg"
+   ],
+   "images": [
+    "159-1"
+   ]
+  },
+  {
+   "id": 160,
+   "slug": "busto-de-piloto-en-resina-base-de-madera",
+   "name": "Busto de piloto en resina, base de madera",
+   "code": "FA-1002",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/BUSTO DE PILOTO DE RESINA, BASE DE MADERA.jpg"
+   ],
+   "images": [
+    "160-1"
+   ]
+  },
+  {
+   "id": 161,
+   "slug": "galvano-de-bronce-fuerza-aerea",
+   "name": "Galvano de bronce Fuerza Aérea",
+   "code": "FA-1003",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/Galvano de bronce Fuerza Aerea.jpg"
+   ],
+   "images": [
+    "161-1"
+   ]
+  },
+  {
+   "id": 162,
+   "slug": "galvano-de-bronce-fuerza-aerea-modelo-2",
+   "name": "Galvano de bronce Fuerza Aérea modelo 2",
+   "code": "FA-1004",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/Galvano de bronce 2 Fuerza Aerea.jpg"
+   ],
+   "images": [
+    "162-1"
+   ]
+  },
+  {
+   "id": 163,
+   "slug": "galvano-de-bronce-brigada-aerea",
+   "name": "Galvano de bronce Brigada Aérea",
+   "code": "FA-1005",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/Galvano de bronce brigada aerea.jpg"
+   ],
+   "images": [
+    "163-1"
+   ]
+  },
+  {
+   "id": 164,
+   "slug": "galvano-con-disco-de-bronce-base-30x20-cm-con-caja",
+   "name": "Galvano con disco de bronce, base 30×20 cm con caja",
+   "code": "FA-1006",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/Galvano de disco de bronce, con base de 30x20 cm con caja.jpg"
+   ],
+   "images": [
+    "164-1"
+   ]
+  },
+  {
+   "id": 165,
+   "slug": "galvano-doble-circulo-de-bronce-base-30x38-cm",
+   "name": "Galvano doble círculo de bronce, base 30×38 cm",
+   "code": "FA-1007",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/Galvano doble círculo de bronce, base de 30x38cm.png"
+   ],
+   "images": [
+    "165-1"
+   ]
+  },
+  {
+   "id": 166,
+   "slug": "galvano-rostro-piloto-de-combate-en-resina-base-de-madera",
+   "name": "Galvano rostro piloto de combate en resina, base de madera",
+   "code": "FA-1008",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/GALVANO ROSTRO PILOTO DE COMBATE DE RESINA, BASE DE MADERA.jpg"
+   ],
+   "images": [
+    "166-1"
+   ]
+  },
+  {
+   "id": 167,
+   "slug": "termo-bala-con-logo-grabado",
+   "name": "Termo bala con logo grabado",
+   "code": "FA-1009",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/TERMO BALA CON LOGO GRABADO.jpg"
+   ],
+   "images": [
+    "167-1"
+   ]
+  },
+  {
+   "id": 168,
+   "slug": "llavero-metalico-a-color-fuerza-aerea-de-chile",
+   "name": "Llavero metálico a color Fuerza Aérea de Chile",
+   "code": "FA-1010",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "fuerza-aerea"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/fuerza-aerea/LLAVERO METÁLICO EN COLOR, FUERZA AÉREA DE CHILE.jpg"
+   ],
+   "images": [
+    "168-1"
+   ]
+  },
+  {
+   "id": 169,
+   "slug": "tazon-con-tu-diseno-e-imagen-con-caja",
+   "name": "Tazón con tu diseño e imagen, con caja",
+   "code": "CBN-1001",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/TAZÓN CON TU DISEÑO IMAGEN  CON CAJA.jpg"
+   ],
+   "images": [
+    "169-1"
+   ]
+  },
+  {
+   "id": 170,
+   "slug": "llavero-metalico-a-color-carabineros-de-chile-distintas-unidades",
+   "name": "Llavero metálico a color Carabineros de Chile (distintas unidades)",
+   "code": "CBN-1002",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/Imagen de WhatsApp 2023-01-07 a las 18.52.00.jpg"
+   ],
+   "images": [
+    "170-1"
+   ]
+  },
+  {
+   "id": 171,
+   "slug": "monedas-carabineros-5-cm-x-3-mm-con-caja",
+   "name": "Monedas Carabineros 5 cm × 3 mm, con caja",
+   "code": "CBN-1003",
+   "description": "Fabricación de monedas institucionales de Carabineros de 5 cm de diámetro y 3 mm de espesor, con caja.",
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/FABRICACION DEMONEDAS DE CARABINEROS 5CM  3 DE ESPESOR , CON CAJA.jpg"
+   ],
+   "images": [
+    "171-1"
+   ]
+  },
+  {
+   "id": 172,
+   "slug": "herrete-doble-de-identificacion-grabado-laser",
+   "name": "Herrete doble de identificación grabado láser",
+   "code": "CBN-1004",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/HERRETE DOBLE DE IDENTIFICACIÓN, GRABADO LÁSER.jpg"
+   ],
+   "images": [
+    "172-1"
+   ]
+  },
+  {
+   "id": 173,
+   "slug": "galvano-escudo-de-resina-a-color-carabineros-de-chile-base-madera",
+   "name": "Galvano escudo de resina a color Carabineros de Chile, base madera",
+   "code": "CBN-1005",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/GALVANO ESCUDO DE RESINA EN COLOR CARABINEROS DE CHILE, BASE MADERA.jpg"
+   ],
+   "images": [
+    "173-1"
+   ]
+  },
+  {
+   "id": 174,
+   "slug": "galvano-escudo-escuela-de-carabineros-3d-resina-color-bronce",
+   "name": "Galvano escudo Escuela de Carabineros 3D, resina color bronce",
+   "code": "CBN-1006",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/GALVANO ESCUDO ESCUELA DE CARABINEROS 3D DE RESINA COLOR BRONCE, BASE DE MADERA.jpg"
+   ],
+   "images": [
+    "174-1"
+   ]
+  },
+  {
+   "id": 176,
+   "slug": "galvano-con-disco-de-bronce",
+   "name": "Galvano con disco de bronce",
+   "code": "CBN-1008",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/Galvano con disco de bronce.jpg"
+   ],
+   "images": [
+    "176-1"
+   ]
+  },
+  {
+   "id": 177,
+   "slug": "galvano-escudo-gope-3d-resina-color-bronce-base-de-madera",
+   "name": "Galvano escudo GOPE 3D, resina color bronce, base de madera",
+   "code": "CBN-1009",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/GALVANO ESCUDO GOPE 3D DE RESINA COLOR BRONCE, BASE DE MADERA.jpg"
+   ],
+   "images": [
+    "177-1"
+   ]
+  },
+  {
+   "id": 178,
+   "slug": "galvano-con-disco-de-bronce-base-institucional",
+   "name": "Galvano con disco de bronce, base institucional",
+   "code": "CBN-1010",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/Galvano con disco de bronce base institucional.jpg"
+   ],
+   "images": [
+    "178-1"
+   ]
+  },
+  {
+   "id": 179,
+   "slug": "galvano-con-disco-de-bronce-y-base-institucional-modelo-2",
+   "name": "Galvano con disco de bronce y base institucional modelo 2",
+   "code": "CBN-1011",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "carabineros"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/carabineros/Galvano con disco de bronce y base institucional.jpg"
+   ],
+   "images": [
+    "179-1"
+   ]
+  },
+  {
+   "id": 180,
+   "slug": "tazon-con-imagenes-institucionales-con-caja",
+   "name": "Tazón con imágenes institucionales, con caja",
+   "code": "EJC-1001",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/TAZON CON IMAGENES INSTITUCIONALES CON CAJA.jpg"
+   ],
+   "images": [
+    "180-1"
+   ]
+  },
+  {
+   "id": 181,
+   "slug": "llavero-metalico-a-color-ejercito-de-chile",
+   "name": "Llavero metálico a color Ejército de Chile",
+   "code": "EJC-1002",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/LLAVERO METÁLICO EN COLOR, EJERCITO DE CHILE.jpg"
+   ],
+   "images": [
+    "181-1"
+   ]
+  },
+  {
+   "id": 182,
+   "slug": "galvano-escudo-ejercito-en-resina-color-bronce-envejecido",
+   "name": "Galvano escudo Ejército en resina color bronce envejecido",
+   "code": "EJC-1003",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/GALVANO ESCUDO EJERCITO DE RESINA COLOR BRONCE ENVEJECIDO.jpg"
+   ],
+   "images": [
+    "182-1"
+   ]
+  },
+  {
+   "id": 183,
+   "slug": "galvano-30x20-cm-con-disenos-institucionales-entrega-24-horas",
+   "name": "Galvano 30×20 cm con diseños institucionales — entrega 24 horas",
+   "code": "EJC-1004",
+   "description": "Galvano de 30×20 cm con diseños institucionales y placas dorada, plateada o color blanco. Entrega en 24 horas.",
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/GALVANO DE 30X20 CM CON DISEÑOS INSTITUCIONALES , PLACAS DORADA , PLATEADA Y COLOR BLANCO 24 HORAS.jpg"
+   ],
+   "images": [
+    "183-1"
+   ]
+  },
+  {
+   "id": 184,
+   "slug": "galvano-escudo-regimiento-de-infanteria-n1-buin",
+   "name": "Galvano escudo Regimiento de Infantería N°1 Buin",
+   "code": "EJC-1005",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/GALVANO ESCUDO REGIMIENTO DE INFANTERÍA N°1 BUIN.jpg"
+   ],
+   "images": [
+    "184-1"
+   ]
+  },
+  {
+   "id": 185,
+   "slug": "galvano-con-placa-metalica-full-color-dorada-o-plateada-entrega-48-horas",
+   "name": "Galvano con placa metálica full color, dorada o plateada — entrega 48 horas",
+   "code": "EJC-1006",
+   "description": "Galvano con placa metálica full color, dorada o plateada sobre madera MDF. Tamaños 30×20, 33×26, 30×38 y 50×40 cm. Entrega en 48 horas.",
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/GALVANO CON PLACA METALICA FULL COLOR, DORADA Y PLATEADA , MADERA MDF TAMAÑO 30X20, 33X26CM , 30X38CM, 50X40 CM   ENTREGAS 48 HORAS.jpg"
+   ],
+   "images": [
+    "185-1"
+   ]
+  },
+  {
+   "id": 186,
+   "slug": "busto-cadete-militar-en-resina-base-de-madera",
+   "name": "Busto cadete militar en resina, base de madera",
+   "code": "EJC-1007",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/BUSTO CADETE MILITAR DE RESINA, EN BASE DE MADERA.jpg"
+   ],
+   "images": [
+    "186-1"
+   ]
+  },
+  {
+   "id": 187,
+   "slug": "galvano-de-resina-bronce-envejecido-escuela-de-inteligencia",
+   "name": "Galvano de resina bronce envejecido — Escuela de Inteligencia",
+   "code": "EJC-1008",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/GALVANO DE RESINA COLOR BRONCE ENVEJECIDO, LOGO ESCUELA DE INTELIGENCIA.jpg"
+   ],
+   "images": [
+    "187-1"
+   ]
+  },
+  {
+   "id": 188,
+   "slug": "busto-general-bernardo-o-higgins-en-resina-bronce-envejecido",
+   "name": "Busto General Bernardo O'Higgins en resina bronce envejecido",
+   "code": "EJC-1009",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/BUSTO DE RESINA COLOR BRONCE ENVEJECIDO, GENERAL BERNARDO O´HIGGINS.jpg"
+   ],
+   "images": [
+    "188-1"
+   ]
+  },
+  {
+   "id": 189,
+   "slug": "cofre-de-madera-fina-para-gallardete-de-mando",
+   "name": "Cofre de madera fina para gallardete de mando",
+   "code": "EJC-1010",
+   "description": "Cofre de madera fina para gallardete de mando, con tapa interior de vidrio, forro de terciopelo rojo, escudo institucional grabado en metal y disco de bronce. Producto a pedido.",
+   "categories": [
+    "linea-institucional",
+    "ejercito"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/ejercito/COFRE FINA MADERA PARA GALLARDETE DE MANDO.jpg"
+   ],
+   "images": [
+    "189-1"
+   ]
+  },
+  {
+   "id": 190,
+   "slug": "galvano-litoral-piocha-de-bronce-15-cm-base-20x30-cm",
+   "name": "Galvano Litoral piocha de bronce 15 cm, base 20×30 cm",
+   "code": "LTR-1001",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Galvano de litoral piocha de bronce 15 cm, base de 20x30cm.jpg"
+   ],
+   "images": [
+    "190-1"
+   ]
+  },
+  {
+   "id": 191,
+   "slug": "galvano-litoral-piocha-de-bronce-12-cm-base-26x33-cm",
+   "name": "Galvano Litoral piocha de bronce 12 cm, base 26×33 cm",
+   "code": "LTR-1002",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Galvano litoral piocha de bronce 12 cm,base 26x33 cm.jpg"
+   ],
+   "images": [
+    "191-1"
+   ]
+  },
+  {
+   "id": 192,
+   "slug": "cristal-litoral-20x25-cm",
+   "name": "Cristal Litoral 20×25 cm",
+   "code": "LTR-1003",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Cristal de litoral  20x25cm.jpg"
+   ],
+   "images": [
+    "192-1"
+   ]
+  },
+  {
+   "id": 193,
+   "slug": "cristal-litoral-20x17-cm",
+   "name": "Cristal Litoral 20×17 cm",
+   "code": "LTR-1004",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Cristal de litoral  20x17cm.jpg"
+   ],
+   "images": [
+    "193-1"
+   ]
+  },
+  {
+   "id": 194,
+   "slug": "remo-nautico-78-cm",
+   "name": "Remo náutico 78 cm",
+   "code": "LTR-1005",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Remo nautico 78 cm.jpg"
+   ],
+   "images": [
+    "194-1"
+   ]
+  },
+  {
+   "id": 195,
+   "slug": "galvano-litoral-24x19-cm-pieza-de-bronce",
+   "name": "Galvano Litoral 24×19 cm, pieza de bronce",
+   "code": "LTR-1006",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Galvano litoral 24x19cm.jpg"
+   ],
+   "images": [
+    "195-1"
+   ]
+  },
+  {
+   "id": 196,
+   "slug": "portasables-de-rauli-1-20-m-x-20-cm-con-disco-de-bronce",
+   "name": "Portasables de raulí 1,20 m × 20 cm con disco de bronce",
+   "code": "LTR-1007",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Portasables de madera rauli.jpg"
+   ],
+   "images": [
+    "196-1"
+   ]
+  },
+  {
+   "id": 197,
+   "slug": "cofre-de-rauli-35x39-cm",
+   "name": "Cofre de raulí 35×39 cm",
+   "code": "LTR-1008",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Cofre de rauli 35x39cm.png"
+   ],
+   "images": [
+    "197-1"
+   ]
+  },
+  {
+   "id": 199,
+   "slug": "busto-de-arturo-prat-25x10-cm-pieza-de-bronce",
+   "name": "Busto de Arturo Prat 25×10 cm, pieza de bronce",
+   "code": "LTR-1009",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Busto de Arturo Prat 25x10cm.png"
+   ],
+   "images": [
+    "199-1"
+   ]
+  },
+  {
+   "id": 200,
+   "slug": "pieza-de-bronce-litoral-18x18-cm-y-12x12-cm",
+   "name": "Pieza de bronce Litoral 18×18 cm y 12×12 cm",
+   "code": "LTR-1010",
+   "description": null,
+   "categories": [
+    "linea-institucional",
+    "litoral"
+   ],
+   "primary": "linea-institucional",
+   "sources": [
+    "productos/Litoral/Pieza de bronce litoral 18x18 cm Y 12x12cm.jpg"
+   ],
+   "images": [
+    "200-1"
+   ]
+  }
+ ],
+ "banners": [
+  {
+   "id": "b-1",
+   "source": "Campanas.png",
+   "alt": "Decoración náutica: campanas de bronce"
+  },
+  {
+   "id": "b-2",
+   "source": "NAUTICA 3.png",
+   "alt": "Decoración náutica: relojes"
+  },
+  {
+   "id": "b-3",
+   "source": "DECORACION NAUTICA.png",
+   "alt": "Decoración náutica"
+  },
+  {
+   "id": "b-4",
+   "source": "DECORACION NAUTICA 2.png",
+   "alt": "Decoración náutica: timones"
+  },
+  {
+   "id": "b-5",
+   "source": "85253412_10220856886707825_1288360699830992896_o.jpg",
+   "alt": "Salmos impresos"
+  },
+  {
+   "id": "b-6",
+   "source": "proyecto de estampados de tazones.png",
+   "alt": "Proyecto de estampado de tazones"
+  },
+  {
+   "id": "b-7",
+   "source": "maderas mdf 8 tamaños.png",
+   "alt": "Maderas MDF importadas de EE.UU."
+  },
+  {
+   "id": "b-8",
+   "source": "banner.png",
+   "alt": "Impresión en metales"
+  },
+  {
+   "id": "b-9",
+   "source": "galvano especial.jpg",
+   "alt": "Galvanos especiales con campana"
+  },
+  {
+   "id": "b-10",
+   "source": "Chapas.jpg",
+   "alt": "Máquinas de chapitas e insumos"
+  },
+  {
+   "id": "b-11",
+   "source": "banner 1.jpg",
+   "alt": "Máquina para cortar metales"
+  },
+  {
+   "id": "b-12",
+   "source": "placas de sublimacion 2.jpg",
+   "alt": "Placas de sublimación 60×40 cm"
+  },
+  {
+   "id": "b-13",
+   "source": "galvanos de buques navales.jpg",
+   "alt": "Galvanos en metales de buques navales"
+  },
+  {
+   "id": "b-14",
+   "source": "fundicion anclote im.jpg",
+   "alt": "Fundición: productos en bronce"
+  },
+  {
+   "id": "b-15",
+   "source": "baner de moneda.jpg",
+   "alt": "Monedas conmemorativas"
+  },
+  {
+   "id": "b-16",
+   "source": "general carrera.png",
+   "alt": "Galvanos Capitanía de Puerto"
+  },
+  {
+   "id": "b-17",
+   "source": "productos/chapitas/armada de chile chapas.jpg",
+   "alt": "Chapitas Armada de Chile"
+  },
+  {
+   "id": "b-18",
+   "source": "48426583_2002134516531127_2992719008395952128_n.jpg",
+   "alt": "Copas impresas en láser"
+  },
+  {
+   "id": "b-19",
+   "source": "ssssss.png",
+   "alt": "Pack polera, gorro, banderín y caja"
+  },
+  {
+   "id": "b-20",
+   "source": "VINILOS POLITAPE.png",
+   "alt": "Servicio de plotter de corte"
+  },
+  {
+   "id": "b-21",
+   "source": "india mike.jpg",
+   "alt": "Galvanos institucionales"
+  },
+  {
+   "id": "b-22",
+   "source": "MUSEO MARITIMO BT.png",
+   "alt": "Tazones Museo Marítimo"
+  },
+  {
+   "id": "b-23",
+   "source": "categorias/4834467.jpg",
+   "alt": "Polerones"
+  }
+ ]
+}

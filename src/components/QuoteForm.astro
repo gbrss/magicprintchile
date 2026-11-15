@@ -1,0 +1,46 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="qf" data-quote-form>
+  <ul class="qf__list" data-quote-list></ul>
+  <div class="qf__empty" data-quote-empty>
+    <p><strong>Tu cotización está vacía.</strong></p>
+    <p>Agrega productos desde el catálogo o escríbenos directamente lo que necesitas.</p>
+    <a class="btn btn--ghost btn--sm" href="/catalogo/">Explorar catálogo</a>
+  </div>
+  <form class="qf__form" data-quote-submit>
+    <div class="qf__row">
+      <label><span>Nombre</span><input name="nombre" autocomplete="name" required /></label>
+      <label><span>Empresa / Institución</span><input name="empresa" autocomplete="organization" /></label>
+    </div>
+    <label><span>Comuna o ciudad de entrega</span><input name="ciudad" autocomplete="address-level2" /></label>
+    <label><span>Detalles (medidas, texto a grabar, fecha que lo necesitas…)</span><textarea name="detalle" rows="3"></textarea></label>
+    <div class="qf__send">
+      <button class="btn btn--wa btn--block" type="submit" value="wa"><Icon name="wa" />Enviar por WhatsApp</button>
+      <button class="btn btn--ghost btn--block" type="submit" value="mail"><Icon name="mail" />Enviar por correo</button>
+    </div>
+    <p class="qf__note">Te respondemos con precio, plazo y propuesta. Puedes adjuntar tu logo en la conversación.</p>
+  </form>
+</div>
+<style>
+  .qf__list { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .qf__list:empty { display: none; }
+  .qf__list :global(li) { display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 0.8rem; align-items: center; padding: 0.8rem 0.9rem; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+  .qf__list :global(.qi-name) { font-weight: 620; font-size: 0.93rem; line-height: 1.3; text-decoration: none; }
+  .qf__list :global(.qi-code) { font-family: var(--f-mono); font-size: 0.72rem; color: var(--muted); }
+  .qf__list :global(.qi-ctrl) { display: flex; align-items: center; gap: 0.3rem; grid-row: span 2; }
+  .qf__list :global(.qi-ctrl input) { width: 64px; text-align: center; padding: 0.4rem; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--paper); font-family: var(--f-mono); }
+  .qf__list :global(.qi-ctrl button) { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; display: grid; place-items: center; }
+  .qf__list :global(.qi-ctrl button:hover) { background: var(--ink); color: #fff; }
+  .qf__empty { padding: 1.2rem; border: 1px dashed var(--line-strong); border-radius: 12px; margin-bottom: 1.2rem; }
+  .qf__empty p { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.93rem; }
+  .qf__empty strong { color: var(--ink); }
+  .qf__form { display: flex; flex-direction: column; gap: 0.8rem; }
+  .qf__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .qf label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+  .qf input, .qf textarea { padding: 0.75rem 0.9rem; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--white); font-size: 0.98rem; color: var(--ink); resize: vertical; }
+  .qf input:focus, .qf textarea:focus { outline: 2px solid var(--brass); outline-offset: 0; border-color: transparent; }
+  .qf__send { display: grid; gap: 0.6rem; margin-top: 0.4rem; }
+  .qf__note { font-size: 0.82rem; color: var(--muted); margin: 0.2rem 0 0; }
+  @media (max-width: 480px) { .qf__row { grid-template-columns: 1fr; } }
+</style>

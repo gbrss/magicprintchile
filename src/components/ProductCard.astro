@@ -1,0 +1,43 @@
+---
+import ProductImage from './ProductImage.astro';
+import Icon from './Icon.astro';
+import { img, catBySlug, type Product } from '../lib/catalog';
+interface Props { product: Product; eager?: boolean }
+const { product: p, eager = false } = Astro.props;
+const sub = p.categories.map((c) => catBySlug(c)).find((c) => c?.parent);
+const label = sub?.name ?? catBySlug(p.primary)?.name;
+const image = img(p.images[0]);
+const search = `${p.name} ${p.code ?? ''} ${label ?? ''}`.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+---
+<article class="card" data-cats={p.categories.join(' ')} data-search={search}>
+  <a href={`/producto/${p.slug}/`} class="card__media" aria-label={p.name}>
+    <ProductImage src={image} alt={p.name} loading={eager ? 'eager' : 'lazy'} />
+  </a>
+  <div class="card__body">
+    <span class="card__cat">{label}</span>
+    <h3 class="card__title"><a href={`/producto/${p.slug}/`}>{p.name}</a></h3>
+    <div class="card__foot">
+      {p.code ? <span class="card__code">{p.code}</span> : <span class="card__code">A pedido</span>}
+      <button class="card__add" type="button" data-add={JSON.stringify({ id: p.id, slug: p.slug, name: p.name, code: p.code })} aria-label={`Agregar ${p.name} a la cotización`}>
+        <Icon name="plus" size={16} /><span>Cotizar</span>
+      </button>
+    </div>
+  </div>
+</article>
+<style>
+  .card { position: relative; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s; }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+  .card__media { display: block; aspect-ratio: 1; padding: 0.9rem; background: radial-gradient(120% 90% at 50% 0%, #fff 40%, var(--paper) 100%); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .card__media :global(img) { transition: transform 0.7s var(--ease); }
+  .card:hover .card__media :global(img) { transform: scale(1.05); }
+  .card__body { display: flex; flex-direction: column; gap: 0.35rem; padding: 0.9rem 1rem 1rem; flex: 1; }
+  .card__cat { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); }
+  .card__title { font-family: var(--f-body); font-size: 0.98rem; font-weight: 620; line-height: 1.3; letter-spacing: 0; margin: 0; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card__title a { text-decoration: none; }
+  .card__title a::after { content: ''; position: absolute; inset: 0; z-index: 0; }
+  .card__foot { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.4rem; }
+  .card__code { font-family: var(--f-mono); font-size: 0.72rem; color: var(--muted); }
+  .card__add { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 0.3rem; border: 1px solid var(--line-strong); background: transparent; border-radius: 999px; padding: 0.42rem 0.75rem; font-size: 0.8rem; font-weight: 650; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .card__add:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .card__add.is-added { background: var(--red); border-color: var(--red); color: #fff; }
+</style>

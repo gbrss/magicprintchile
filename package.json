@@ -1,0 +1,23 @@
+{
+  "name": "magicprintchile",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/build-data.mjs && astro build",
+    "preview": "astro preview",
+    "data": "node scripts/build-data.mjs",
+    "images": "node scripts/fetch-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.5",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "astro": "^7.4.12"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

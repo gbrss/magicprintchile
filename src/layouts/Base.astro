@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import QuoteDrawer from '../components/QuoteDrawer.astro';
+import Icon from '../components/Icon.astro';
+import { SITE, waLink } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  jsonld?: object[];
+  noindex?: boolean;
+}
+const { title, description = SITE.description, image = '/og.jpg', jsonld = [], noindex = false } = Astro.props;
+const fullTitle = title ? `${title} | MagicPrintChile` : `MagicPrintChile — ${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const ogImage = new URL(image, SITE.url).toString();
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE.url}/#org`,
+  name: 'MagicPrintChile',
+  url: SITE.url,
+  logo: `${SITE.url}/brand/logo.svg`,
+  email: SITE.email,
+  telephone: SITE.phoneRaw,
+  areaServed: 'CL',
+  contactPoint: { '@type': 'ContactPoint', telephone: SITE.phoneRaw, contactType: 'sales', availableLanguage: 'es' },
+};
+---
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#0a1033" />
+    <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="MagicPrintChile" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify([org, ...jsonld])} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <QuoteDrawer />
+    <a class="wa-float" href={waLink('Hola MagicPrintChile, quiero cotizar.')} target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <Icon name="wa" size={28} /><span>¿Cotizamos?</span>
+    </a>
+    <script>
+      const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+    </script>
+    <style>
+      .skip { position: absolute; left: -999px; top: 0; z-index: 100; background: var(--ink); color: #fff; padding: 0.7rem 1rem; }
+      .skip:focus { left: 1rem; top: 1rem; }
+      .wa-float { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60; display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; background: #128c4a; color: #fff; border-radius: 999px; box-shadow: 0 12px 30px -8px rgb(18 140 74 / 0.6); text-decoration: none; font-weight: 650; transition: transform 0.3s var(--ease); }
+      .wa-float span { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width 0.4s var(--ease), padding 0.4s; }
+      .wa-float:hover { transform: translateY(-3px); }
+      .wa-float:hover span { max-width: 140px; padding-right: 0.4rem; }
+      @media (min-width: 900px) { .wa-float span { max-width: 140px; padding-right: 0.4rem; } }
+    </style>
+  </body>
+</html>

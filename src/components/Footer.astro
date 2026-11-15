@@ -1,0 +1,67 @@
+---
+import Icon from './Icon.astro';
+import { SITE, waLink } from '../lib/site';
+import { catBySlug, INSTITUTIONAL, CORPORATE } from '../lib/catalog';
+const inst = [...INSTITUTIONAL, 'galvanos', 'monedas'].map(catBySlug).filter(Boolean);
+const corp = CORPORATE.map(catBySlug).filter(Boolean);
+---
+<footer class="ftr dark">
+  <div class="ftr__cta wrap">
+    <h2>¿Aniversario, cambio de mando o regalo corporativo?<br /><em>Lo grabamos.</em></h2>
+    <div class="ftr__btns">
+      <a class="btn btn--wa" href={waLink('Hola MagicPrintChile, necesito cotizar un trabajo.')} target="_blank" rel="noopener"><Icon name="wa" />Cotizar por WhatsApp</a>
+      <a class="btn btn--light" href="/catalogo/">Ver catálogo</a>
+    </div>
+  </div>
+  <div class="ftr__rosette" aria-hidden="true"></div>
+  <div class="wrap ftr__grid">
+    <div class="ftr__brand">
+      <img src="/brand/logo-white.svg" alt="MagicPrintChile" width="240" height="44" loading="lazy" />
+      <p>{SITE.tagline}. Impresión en metales, grabado láser, fundición en bronce, sublimación y bordado.</p>
+      <a href={`tel:${SITE.phoneRaw}`}><Icon name="phone" size={16} />{SITE.phone}</a>
+      <a href={`mailto:${SITE.email}`}><Icon name="mail" size={16} />{SITE.email}</a>
+    </div>
+    <nav aria-label="Institucional y honores">
+      <p class="eyebrow">Institucional</p>
+      {inst.map((c) => <a href={`/categoria/${c!.slug}/`}>{c!.name}</a>)}
+    </nav>
+    <nav aria-label="Corporativo">
+      <p class="eyebrow">Corporativo</p>
+      {corp.map((c) => <a href={`/categoria/${c!.slug}/`}>{c!.name}</a>)}
+    </nav>
+    <nav aria-label="Empresa">
+      <p class="eyebrow">MagicPrintChile</p>
+      <a href="/catalogo/">Catálogo completo</a>
+      <a href="/servicios/">Servicios y técnicas</a>
+      <a href="/empresas/">Empresas</a>
+      <a href="/linea-institucional/">Línea institucional</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/cotizar/">Mi cotización</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+    </nav>
+  </div>
+  <div class="wrap ftr__base">
+    <span>MagicPrintChile® © {new Date().getFullYear()} · Todos los derechos reservados.</span>
+    <span>Desarrollo: gBrass webDesign</span>
+  </div>
+</footer>
+
+<style>
+  .ftr { position: relative; overflow: hidden; padding-top: clamp(4rem, 8vw, 7rem); }
+  .ftr__cta { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; padding-bottom: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid rgb(246 242 233 / 0.14); }
+  .ftr__cta h2 { margin: 0; max-width: 20ch; font-size: clamp(2rem, 4.4vw, 3.8rem); }
+  .ftr__cta em { color: var(--brass-2); }
+  .ftr__btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .ftr__rosette { position: absolute; right: -180px; top: -140px; width: 620px; aspect-ratio: 1; background: url('/ornaments/rosette-brass.svg') center / contain no-repeat; opacity: 0.22; animation: spin 140s linear infinite; pointer-events: none; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .ftr__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding-block: 3.5rem; }
+  .ftr__grid nav, .ftr__brand { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ftr__grid .eyebrow { margin-bottom: 0.6rem; }
+  .ftr__grid a { text-decoration: none; color: rgb(246 242 233 / 0.78); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content; }
+  .ftr__grid a:hover { color: #fff; text-decoration: underline; }
+  .ftr__brand img { width: 230px; margin-bottom: 1rem; }
+  .ftr__brand p { color: rgb(246 242 233 / 0.6); font-size: 0.93rem; max-width: 36ch; }
+  .ftr__base { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 1.4rem 2rem; border-top: 1px solid rgb(246 242 233 / 0.14); font-size: 0.8rem; color: rgb(246 242 233 / 0.5); font-family: var(--f-mono); }
+  @media (max-width: 900px) { .ftr__grid { grid-template-columns: 1fr 1fr; } .ftr__brand { grid-column: 1 / -1; } }
+</style>

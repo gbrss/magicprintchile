@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import QuoteForm from './QuoteForm.astro';
+---
+<dialog class="qd" id="quote-drawer" aria-labelledby="qd-title">
+  <div class="qd__panel">
+    <header class="qd__head">
+      <div>
+        <p class="eyebrow">Sin costo ni compromiso</p>
+        <h2 id="qd-title">Mi cotización</h2>
+      </div>
+      <button class="qd__close" type="button" data-quote-close aria-label="Cerrar"><Icon name="close" /></button>
+    </header>
+    <div class="qd__body">
+      <QuoteForm />
+    </div>
+  </div>
+</dialog>
+<div class="toast" role="status" aria-live="polite" data-toast hidden>
+  <Icon name="check" size={18} /><span data-toast-text>Agregado a tu cotización</span>
+  <button type="button" data-quote-open>Ver</button>
+</div>
+
+<script>
+  import { initQuote } from '../scripts/quote';
+  initQuote();
+</script>
+
+<style>
+  .qd { margin: 0 0 0 auto; padding: 0; border: 0; width: min(480px, 100vw); max-width: 100vw; height: 100dvh; max-height: 100dvh; background: var(--paper); color: var(--ink); box-shadow: -20px 0 60px rgb(10 16 51 / 0.25); }
+  .qd::backdrop { background: rgb(10 16 51 / 0.45); backdrop-filter: blur(3px); }
+  .qd[open] { animation: slide 0.45s var(--ease); }
+  @keyframes slide { from { transform: translateX(100%); } }
+  .qd__panel { display: flex; flex-direction: column; height: 100%; }
+  .qd__head { display: flex; justify-content: space-between; align-items: start; padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid var(--line); background: var(--white); }
+  .qd__head h2 { font-size: 2rem; margin: 0.3rem 0 0; }
+  .qd__close { border: 1px solid var(--line-strong); background: transparent; border-radius: 50%; width: 42px; height: 42px; display: grid; place-items: center; cursor: pointer; }
+  .qd__body { flex: 1; overflow: auto; padding: 1.25rem 1.5rem 2rem; }
+  .toast { position: fixed; z-index: 90; left: 50%; bottom: 1.5rem; transform: translateX(-50%); display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 0.8rem 0.7rem 1.1rem; background: var(--ink); color: var(--paper); border-radius: 999px; box-shadow: var(--shadow); font-size: 0.92rem; animation: pop 0.4s var(--ease); }
+  .toast button { border: 0; background: var(--red); color: #fff; border-radius: 999px; padding: 0.45rem 0.9rem; font-weight: 650; cursor: pointer; }
+  @keyframes pop { from { transform: translate(-50%, 20px); opacity: 0; } }
+</style>

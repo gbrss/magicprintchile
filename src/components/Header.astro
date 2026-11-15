@@ -1,0 +1,151 @@
+---
+import Icon from './Icon.astro';
+import { SITE, waLink } from '../lib/site';
+import { catBySlug, INSTITUTIONAL, CORPORATE } from '../lib/catalog';
+const path = Astro.url.pathname;
+const inst = INSTITUTIONAL.map(catBySlug).filter(Boolean);
+const corp = CORPORATE.map(catBySlug).filter(Boolean);
+const honors = ['galvanos', 'monedas'].map(catBySlug).filter(Boolean);
+const links = [
+  { href: '/catalogo/', label: 'Catálogo', mega: true },
+  { href: '/linea-institucional/', label: 'Institucional' },
+  { href: '/empresas/', label: 'Empresas' },
+  { href: '/servicios/', label: 'Servicios' },
+  { href: '/contacto/', label: 'Contacto' },
+];
+---
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <span class="topbar__msg"><span class="dot"></span> Ventas online · Cotizaciones a todo Chile</span>
+    <div class="topbar__links">
+      <a href={`tel:${SITE.phoneRaw}`}><Icon name="phone" size={14} />{SITE.phone}</a>
+      <a href={`mailto:${SITE.email}`} class="hide-sm"><Icon name="mail" size={14} />{SITE.email}</a>
+    </div>
+  </div>
+</div>
+<header class="hdr" data-hdr>
+  <div class="wrap hdr__in">
+    <a href="/" class="hdr__logo" aria-label="MagicPrintChile — inicio">
+      <img src="/brand/logo.svg" alt="MagicPrintChile" width="258" height="48" fetchpriority="high" />
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        {links.map((l) => (
+          <li class:list={[{ 'has-mega': l.mega }]}>
+            <a href={l.href} aria-current={path.startsWith(l.href) ? 'page' : undefined}>{l.label}</a>
+            {l.mega && (
+              <div class="mega">
+                <div class="mega__col">
+                  <p class="eyebrow">Línea institucional</p>
+                  {inst.map((c) => <a href={`/categoria/${c!.slug}/`}>{c!.name}<small>{c!.count}</small></a>)}
+                </div>
+                <div class="mega__col">
+                  <p class="eyebrow">Honores</p>
+                  {honors.map((c) => <a href={`/categoria/${c!.slug}/`}>{c!.name}<small>{c!.count}</small></a>)}
+                  <a href="/categoria/galvanos-de-bronce/">Bronce fundido</a>
+                  <a href="/categoria/galvanos-laser/">Grabado láser</a>
+                </div>
+                <div class="mega__col mega__col--wide">
+                  <p class="eyebrow">Corporativo y promocional</p>
+                  <div class="mega__grid">
+                    {corp.map((c) => <a href={`/categoria/${c!.slug}/`}>{c!.short ?? c!.name}<small>{c!.count}</small></a>)}
+                  </div>
+                </div>
+                <a class="mega__all" href="/catalogo/">Ver los {115} productos <Icon name="arrow" size={16} /></a>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="hdr__actions">
+      <a href="/catalogo/#buscar" class="iconbtn" aria-label="Buscar en el catálogo"><Icon name="search" /></a>
+      <button class="iconbtn quotebtn" type="button" data-quote-open aria-label="Abrir mi cotización">
+        <Icon name="quote" /><span class="quotebtn__label">Cotización</span><span class="badge" data-quote-count hidden>0</span>
+      </button>
+      <a class="btn btn--wa btn--sm hide-md" href={waLink('Hola MagicPrintChile, quiero cotizar.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+      <button class="iconbtn menubtn" type="button" aria-expanded="false" aria-controls="mnav" data-menu><Icon name="menu" /><span class="sr-only">Menú</span></button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav" hidden>
+    <div class="wrap">
+      {links.map((l) => <a href={l.href} class="mnav__l">{l.label}<Icon name="arrow" size={18} /></a>)}
+      <p class="eyebrow">Categorías</p>
+      <div class="mnav__chips">
+        {[...inst, ...honors, ...corp].map((c) => <a class="chip" href={`/categoria/${c!.slug}/`}>{c!.short ?? c!.name}</a>)}
+      </div>
+      <a class="btn btn--wa btn--block" href={waLink('Hola MagicPrintChile, quiero cotizar.')} target="_blank" rel="noopener"><Icon name="wa" />Cotizar por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .topbar { background: var(--ink); color: rgb(246 242 233 / 0.78); font-size: 0.8rem; }
+  .topbar__in { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 36px; }
+  .topbar__links { display: flex; gap: 1.4rem; }
+  .topbar a { display: inline-flex; align-items: center; gap: 0.45em; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #2fd36b; margin-right: 0.4em; box-shadow: 0 0 0 3px rgb(47 211 107 / 0.25); }
+
+  .hdr { position: sticky; top: 0; z-index: 50; background: rgb(246 242 233 / 0.86); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
+  .hdr.is-stuck { border-bottom-color: var(--line); background: rgb(246 242 233 / 0.94); }
+  .hdr__in { display: flex; align-items: center; gap: 1.5rem; min-height: 76px; }
+  .hdr__logo img { width: clamp(190px, 18vw, 250px); height: auto; }
+  .nav { margin-left: auto; }
+  .nav > ul { display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
+  .nav > ul > li > a { display: block; padding: 0.6rem 0.85rem; border-radius: 999px; text-decoration: none; font-weight: 560; font-size: 0.95rem; transition: background 0.2s; }
+  .nav > ul > li > a:hover, .nav a[aria-current='page'] { background: rgb(10 16 51 / 0.06); }
+  .has-mega { position: relative; }
+  .mega {
+    position: absolute; left: -2rem; top: calc(100% + 10px); width: min(860px, 80vw);
+    display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 1.5rem; padding: 1.6rem;
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 0.25s, transform 0.25s var(--ease), visibility 0.25s;
+  }
+  .mega::before { content: ''; position: absolute; inset: -12px 0 auto; height: 12px; }
+  .has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: none; }
+  .mega__col { display: flex; flex-direction: column; gap: 0.1rem; }
+  .mega__col .eyebrow { margin: 0 0 0.6rem; }
+  .mega a { display: flex; justify-content: space-between; gap: 1rem; padding: 0.42rem 0.55rem; margin-inline: -0.55rem; border-radius: 8px; text-decoration: none; font-size: 0.93rem; }
+  .mega a:hover { background: var(--paper); }
+  .mega small { font-family: var(--f-mono); color: var(--muted); font-size: 0.72rem; }
+  .mega__grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.6rem; }
+  .mega__all { grid-column: 1 / -1; justify-content: center !important; align-items: center; gap: 0.5rem !important; margin: 0 !important; background: var(--ink); color: var(--white); font-weight: 600; padding: 0.8rem !important; }
+  .mega__all:hover { background: var(--navy) !important; }
+
+  .hdr__actions { display: flex; align-items: center; gap: 0.5rem; }
+  .iconbtn { position: relative; display: inline-flex; align-items: center; gap: 0.45rem; height: 44px; min-width: 44px; justify-content: center; padding: 0 0.7rem; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+  .iconbtn:hover { background: var(--white); }
+  .badge { position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: var(--red); color: #fff; font-size: 0.72rem; font-family: var(--f-mono); display: grid; place-items: center; }
+  .badge.bump { animation: bump 0.5s var(--ease); }
+  @keyframes bump { 40% { transform: scale(1.35); } }
+  .menubtn { display: none; }
+  .mnav { border-top: 1px solid var(--line); background: var(--paper); max-height: calc(100dvh - 112px); overflow: auto; padding: 1rem 0 2rem; }
+  .mnav__l { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--f-display); font-size: 1.6rem; }
+  .mnav .eyebrow { margin: 1.5rem 0 0.8rem; }
+  .mnav__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+  @media (max-width: 1080px) { .hide-md { display: none; } }
+  @media (max-width: 960px) {
+    .nav { display: none; }
+    .menubtn { display: inline-flex; }
+    .hdr__actions { margin-left: auto; }
+    .quotebtn__label { display: none; }
+  }
+  @media (max-width: 640px) { .hide-sm, .topbar__msg { display: none; } .topbar__in { justify-content: center; } .hdr__in { min-height: 64px; gap: 0.8rem; } .hdr__logo img { width: 170px; } .iconbtn[href] { display: none; } }
+</style>
+
+<script>
+  const hdr = document.querySelector('[data-hdr]');
+  const onScroll = () => hdr?.classList.toggle('is-stuck', window.scrollY > 10);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu]');
+  const nav = document.getElementById('mnav');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    if (nav) nav.hidden = open;
+    document.documentElement.style.overflow = open ? '' : 'hidden';
+  });
+</script>

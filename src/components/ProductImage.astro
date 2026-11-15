@@ -1,0 +1,33 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src?: ImageMetadata;
+  alt: string;
+  widths?: number[];
+  sizes?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fit?: 'contain' | 'cover';
+}
+const { src, alt, widths = [320, 480, 720], sizes = '(min-width: 1100px) 280px, (min-width: 640px) 33vw, 50vw', class: cls = '', loading = 'lazy', fit = 'contain' } = Astro.props;
+const initials = alt.replace(/[^A-Za-zÁÉÍÓÚÑáéíóúñ ]/g, '').split(' ').filter((w) => w.length > 2).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+---
+{src ? (
+  <Picture src={src} alt={alt} widths={widths.filter((w) => w <= src.width * 1.01) .length ? widths.filter((w) => w <= src.width * 1.01) : [src.width]} sizes={sizes} formats={['avif', 'webp']} loading={loading} decoding="async" class:list={['pimg', `pimg--${fit}`, cls]} fetchpriority={loading === 'eager' ? 'high' : 'auto'} />
+) : (
+  <div class:list={['pimg', 'pimg--ph', cls]} role="img" aria-label={alt}>
+    <span>{initials || 'MP'}</span>
+  </div>
+)}
+<style>
+  .pimg, .pimg :global(img) { width: 100%; height: 100%; }
+  .pimg :global(img) { object-fit: contain; }
+  .pimg--cover :global(img) { object-fit: cover; }
+  .pimg--ph {
+    display: grid; place-items: center; aspect-ratio: 1;
+    background: url('/ornaments/rosette-ink.svg') center / 92% no-repeat, var(--paper-2);
+  }
+  .pimg--ph span { font-family: var(--f-display); font-size: 2.2rem; font-style: italic; color: var(--brass); background: var(--paper-2); border-radius: 50%; width: 2.4em; height: 2.4em; display: grid; place-items: center; }
+</style>
