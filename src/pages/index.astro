@@ -7,7 +7,7 @@ import { byIds, img, catBySlug, products, INSTITUTIONAL, CORPORATE, bannerBySour
 import { services } from '../lib/services';
 import { waLink } from '../lib/site';
 
-const [coin, shield, mug, chest] = byIds([141, 149, 131, 189]);
+const [coin, shield, mug, chest] = byIds([143, 149, 131, 189]);
 const featured = byIds([143, 199, 171, 185, 97, 125, 104, 132]);
 const branches = [
   { slug: 'infanteria-de-marina', id: 152 },
@@ -54,11 +54,11 @@ const webLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Mag
         <div class="medal">
           <div class="medal__ring"></div>
           <div class="medal__ring medal__ring--2"></div>
-          <div class="medal__face"><ProductImage src={img(coin.images[0])} alt={coin.name} loading="eager" widths={[360, 560]} sizes="(min-width: 900px) 360px, 60vw" fit="cover" /></div>
+          <div class="medal__face"><ProductImage src={img(coin.images[0])} alt={coin.name} loading="eager" widths={[360, 560, 800]} sizes="(min-width: 900px) 360px, 60vw" /></div>
         </div>
-        <a class="float float--a" href={`/producto/${shield.slug}/`} tabindex="-1"><ProductImage src={img(shield.images[0])} alt={shield.name} widths={[200, 320]} sizes="180px" /><span>{shield.code}</span></a>
-        <a class="float float--b" href={`/producto/${mug.slug}/`} tabindex="-1"><ProductImage src={img(mug.images[0])} alt={mug.name} widths={[200, 320]} sizes="160px" /><span>Tazón mágico</span></a>
-        <a class="float float--c" href={`/producto/${chest.slug}/`} tabindex="-1"><ProductImage src={img(chest.images[0])} alt={chest.name} widths={[200, 320]} sizes="160px" /><span>{chest.code}</span></a>
+        <a class="float float--a" href={`/producto/${shield.slug}/`} tabindex="-1"><ProductImage src={img(shield.images[0])} alt={shield.name} widths={[200, 320]} sizes="180px" /></a>
+        <a class="float float--b" href={`/producto/${mug.slug}/`} tabindex="-1"><ProductImage src={img(mug.images[0])} alt={mug.name} widths={[200, 320]} sizes="160px" /></a>
+        <a class="float float--c" href={`/producto/${chest.slug}/`} tabindex="-1"><ProductImage src={img(chest.images[0])} alt={chest.name} widths={[200, 320]} sizes="160px" /></a>
       </div>
     </div>
   </section>
@@ -203,12 +203,12 @@ const webLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Mag
   .medal { position: absolute; inset: 6%; display: grid; place-items: center; }
   .medal__ring { position: absolute; inset: 0; background: url('/ornaments/rosette-brass.svg') center / contain no-repeat; animation: spin 120s linear infinite; }
   .medal__ring--2 { inset: 13%; background-image: url('/ornaments/rosette-ink.svg'); animation-direction: reverse; animation-duration: 90s; opacity: 0.6; }
-  .medal__face { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--bronze); padding: 6px; box-shadow: 0 30px 60px -20px rgb(10 16 51 / 0.55), inset 0 0 0 1px rgb(255 255 255 / 0.4); }
-  .medal__face :global(.pimg), .medal__face :global(img) { border-radius: 50%; background: var(--white); }
+  .medal__face { position: relative; width: 62%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--bronze); padding: 6px; box-shadow: 0 30px 60px -20px rgb(10 16 51 / 0.55), inset 0 0 0 1px rgb(255 255 255 / 0.4); }
+  .medal__face :global(.pimg) { border-radius: 50%; background: radial-gradient(circle at 50% 35%, #fff 0%, #fff 55%, #f1ece0 100%); padding: 7% 9% 6%; box-shadow: inset 0 0 0 1px rgb(10 16 51 / 0.06), inset 0 -18px 40px -20px rgb(10 16 51 / 0.25); }
+  .medal__face :global(img) { filter: drop-shadow(0 14px 18px rgb(10 16 51 / 0.28)); }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .float { position: absolute; display: flex; flex-direction: column; width: 30%; padding: 0.55rem 0.55rem 0.4rem; background: var(--white); border-radius: 14px; box-shadow: var(--shadow); text-decoration: none; animation: bob 7s ease-in-out infinite; }
+  .float { position: absolute; display: flex; flex-direction: column; width: 30%; padding: 0.6rem; background: var(--white); border-radius: 14px; box-shadow: var(--shadow); text-decoration: none; animation: bob 7s ease-in-out infinite; }
   .float :global(.pimg) { aspect-ratio: 1; }
-  .float span { font-family: var(--f-mono); font-size: 0.66rem; color: var(--muted); padding-top: 0.35rem; text-align: center; }
   .float--a { left: -4%; top: 8%; rotate: -6deg; }
   .float--b { right: -2%; top: 2%; width: 25%; rotate: 5deg; animation-delay: -2s; }
   .float--c { right: 2%; bottom: 2%; width: 27%; rotate: -3deg; animation-delay: -4s; }
